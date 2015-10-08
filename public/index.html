@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="javascript/events.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+    <script>
+
+        $(function() {
+
+            $("#check").submit(function(event) {
+                event.preventDefault();
+
+                var errorMessage = $("#errorMessage");
+                var error = $("#error");
+                error.hide();
+
+                $("#message").hide();
+
+                var email__c = $("#email__c").val();
+            
+                var login_pass__c = $("#login_pass__c").val();
+               
+                
+                if (email__c.length == 0 || login_pass__c.length == 0 ) {
+                    errorMessage.text("This fields are required Email and Password");
+                    error.show();
+                }
+                
+                
+                else {
+                    $.ajax({
+                        url: event.target.action,
+                        method: event.target.method,
+                        data: JSON.stringify({
+                            email__c: email__c,
+                           login_pass__c: login_pass__c,
+                        
+                        }),
+                       
+                         contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function(data) {
+
+                                location.href = "/launchpad.html";
+
+                        },
+                        error: function(err) {
+                            errorMessage.text("Please Check yours Credentials");
+                            error.show();
+                        }
+                })
+                
+            }
+            });
+                               
+         });   
+            
+    </script> 
+</head>
+<body>
+    <div id="welcome" class="alert alert-success" role="alert">Welcome to SDI Marketing Dashboard </div>
+    <!--login modal-->
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h3 class="text-center"> SDI Login</h3>
+      </div>
+      <div class="modal-body">
+          <form id="check" method="POST" action="/check" class="">
+            <div class="form-group">
+              <input id="email__c" type="text" class="form-control input-lg" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input id="login_pass__c" type="password" class="form-control input-lg" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <button type="submit" id="style_btn" class="btn btn-primary btn-lg btn-block ">Sign In</button>
+                <div >
+              <div id="error" class="alert alert-danger" role="alert" style="display: none;">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        <span id="errorMessage"></span>
+            </div>
+		  </div>	
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+  </div>
+  </div>
+</div>
+</body>
+</html>
