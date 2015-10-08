@@ -19,11 +19,13 @@
 }
 
 #welcome {
-
+padding-top: 1em;
     background: #072754;
     color: #FFD100;
     font-size: 24px;
     text-align: center;
+    
+    
 }
 
 #error {
@@ -41,9 +43,16 @@
 
 #loginModal {
 
-    padding-top: 8em;
+    padding-top: 10em;
 
     
+}
+
+#intro {
+
+    text-align:justify;
+    font-weight:bold;
+    font-size: 0.5em;
 }
 
 #effect:hover {
@@ -52,6 +61,16 @@ background: #072754;
 font-size: 16px;
 font-weight: bold;
     
+
+}
+
+
+#text_login {
+
+    text-decoration: underline;
+    font-weight: bold;
+    color: #072754;
+    text-align: center;
 
 }
 
@@ -68,6 +87,16 @@ background: #FFD100;
 
 background: #072754;
 color: white;
+
+}
+
+
+#nav_color_intro {
+
+    background: #072754;
+    color: #FFD100;
+    font-size: 24px;
+
 
 }
 

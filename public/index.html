@@ -70,13 +70,31 @@
     </script> 
 </head>
 <body>
-    <div id="welcome" class="alert alert-success" role="alert">Welcome to SDI Marketing Dashboard </div>
+    
+    
+    
+    <nav id="nav_color_intro" class="navbar navbar-inverse">
+    
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="img/sdi_dashboard.png" >
+      </a>
+       
+    </div>
+<p id="intro">Welcome to SDI Dashboard</p> 
+         </div>
+</nav>
+    
+   
+   
     <!--login modal-->
 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
-          <h3 class="text-center"> SDI Login</h3>
+          <h3 id="text_login">Login <i class="fa fa-sign-in fa-2x"> </h3></i>
       </div>
       <div class="modal-body">
           <form id="check" method="POST" action="/check" class="">
