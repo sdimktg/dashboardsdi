@@ -78,6 +78,16 @@ font-weight: bold;
 }
 
 
+#welcome_user1 {
+
+font-weight: bold;
+font-size: 1em;
+text-align: center;
+color: black;
+
+}
+
+
 #text_login {
 
     text-decoration: underline;
