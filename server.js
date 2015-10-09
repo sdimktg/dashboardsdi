@@ -6,6 +6,7 @@ var express = require('express'),
     app = express();
 
 var session  = require('express-session');
+var localStorage = require('node-localstorage');
 var pg = require('pg');
 
 

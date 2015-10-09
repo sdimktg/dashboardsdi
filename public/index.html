@@ -53,8 +53,11 @@
                         dataType: "json",
                         success: function(data) {
                             
-                            alert(sessionStorage);
-
+                        data.rows.forEach(function(row){
+                    
+                            alert(row.hashid__c);
+          });
+                            
                                 location.href = "/launchpad.html";
 
                         },
