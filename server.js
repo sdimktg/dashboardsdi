@@ -79,6 +79,39 @@ app.post('/check', function(req, res) {
 
 
 
+
+
+
+/***********************************************************************************************
+Check the user credentials in salesforce
+************************************************************************************************/
+app.get('/check', function(req, res) {
+    
+    sess=req.session;
+    pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
+        
+        if (err) console.log(err);
+        
+     var check  = 'SELECT hashid__c, employee_name__c FROM  salesforce.CDN_Reps__c WHERE sess = hashid__c  ';
+        conn.query(check, function(err, result) {
+          
+           if (err) {
+               
+                res.send('Error in Query');
+        
+           }
+            res.json(result);
+            
+            });
+        });
+});
+
+
+
+
+
+
+
 app.get('/launchpad',function(req,res){
 sess=req.session;
 if(sess.sfid)
