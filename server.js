@@ -49,13 +49,13 @@ Check the user credentials in salesforce
 ************************************************************************************************/
 app.post('/check', function(req, res) {
     
-    sess=req.session;
+    //sess=req.session;
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
         
         if (err) console.log(err);
         
-     var login  = 'SELECT sfid, name FROM  salesforce.CDN_Reps__c  WHERE login_pass__c = $1 AND email__c = $2 ';
-        conn.query(login,[req.body.login_pass__c,req.body.email__c],
+     var check  = 'SELECT hashid__c, employee_name__c FROM  salesforce.CDN_Reps__c  WHERE login_pass__c = $1 AND email__c = $2 ';
+        conn.query(check,[req.body.login_pass__c,req.body.email__c],
        function(err, result){
                 done();
                 if (err != null || result.rowCount == 0) {
@@ -63,9 +63,11 @@ app.post('/check', function(req, res) {
                     res.status(400).json({error: err});
                 }
                 else {
-                    sess.sfid= req.body.sfid;
-                    sess.name = req.body.name;
-                    res.json(result);
+                    
+                    req.session.hasid__c = req.body.hashid__c;
+                    //sess.sfid= req.body.sfid;
+                    //sess.name = req.body.name;
+                    res.redirect('/launchpad');
                 }
                    
         });   
@@ -266,9 +268,6 @@ app.post('/delete', function(req, res) {
             
     });
 });
-
-
-
 
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
