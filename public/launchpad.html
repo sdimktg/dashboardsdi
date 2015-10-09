@@ -19,19 +19,10 @@
         
         $(function() {
         
-             $.ajax({ // ajax call starts
-            url: '/check', 
-            type:"GET",
-            dataType: 'json', // Choosing a JSON datatype
-            contentType: "application/json; charset=utf-8",
-                 
-                success: function(data) {
-
-                    alert(data);
-                  
-            }     
-           
-        });
+    var    employee_name = localStorage.getItem("employee_name__c");
+            
+            $("#welcome_user").append(employee_name);
+        //$(#welcome_user).append(
 });
 
     </script> 
