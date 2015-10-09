@@ -67,7 +67,7 @@ app.post('/check', function(req, res) {
                     req.session.hashid__c = req.body.hashid__c;
                     //sess.sfid= req.body.sfid;
                     //sess.name = req.body.name;
-                    res.redirect('/launchpad');
+                    res.redirect('/launchpad.html');
                 }
                    
         });   
