@@ -54,8 +54,14 @@
                         success: function(data) {
                             
                         data.rows.forEach(function(row){
+                            
+                            var hashid__c = row.hashid__c;
+                            
+                            if(localStorage.getItem("hashid__c"))
+                                hashid__c = localStorage.getItem("hashid__c");
+                            
                     
-                            alert(row.hashid__c);
+                            alert(hashid__c);
           });
                             
                                 location.href = "/launchpad.html";
