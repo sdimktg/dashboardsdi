@@ -60,6 +60,8 @@ app.post('/check', function(req, res) {
                 done();
                 if (err != null || result.rowCount == 0) {
                      console.error(err);
+                     console.log(check);
+                    
                     res.status(400).json({error: err});
                 }
                 else {
