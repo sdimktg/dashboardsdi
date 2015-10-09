@@ -83,7 +83,15 @@ app.post('/check', function(req, res) {
 
 
 /***********************************************************************************************
-Check the user credentials in salesforce
+Get the session variable and compare in the database get the hashid and employee name !!!!
+
+
+
+TRY 
+
+
+
+
 ************************************************************************************************/
 app.get('/check', function(req, res) {
     
@@ -92,7 +100,7 @@ app.get('/check', function(req, res) {
         
         if (err) console.log(err);
         
-     var check  = 'SELECT hashid__c, employee_name__c FROM  salesforce.CDN_Reps__c WHERE sess = hashid__c  ';
+     var check  = 'SELECT hashid__c, employee_name__c FROM  salesforce.CDN_Reps__c ';
         conn.query(check, function(err, result) {
           
            if (err) {
