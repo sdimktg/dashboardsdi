@@ -21,14 +21,16 @@
         
              $.ajax({ // ajax call starts
             url: '/check', 
-            type:"GET",
+            type:"POST",
             dataType: 'json', // Choosing a JSON datatype
             contentType: "application/json; charset=utf-8",
-           
-            success: function(data) {
+                 
+                success: function(data) {
 
-              alert('GOOD');
-            }
+                    alert(data);
+                  
+            }     
+           
         });
 });
 
