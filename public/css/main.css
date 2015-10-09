@@ -18,6 +18,11 @@
 
 }
 
+a:hover {
+
+color: #FFD100;
+
+}
 
 #logout {
     
@@ -173,6 +178,7 @@ color: white;
     
     text-align: center;
     font-weight: bold;
+    color: white;
 }
 
 
@@ -264,7 +270,7 @@ background-color: #E1410A;
 
 .bg-blue {
 
-background-color: #FFD100;
+background-color: #581A4A;
 
 
 }
