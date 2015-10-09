@@ -34,7 +34,7 @@ var sess;
         
         sess=req.session;
             //Session set when user Request our app via URL
-    if(sess.sfid)
+    if(sess.hashid)
     {
         res.redirect('/launchpad');
     }
@@ -64,7 +64,7 @@ app.post('/check', function(req, res) {
                 }
                 else {
                     
-                    req.session.hasid__c = req.body.hashid__c;
+                    req.session.hashid__c = req.body.hashid__c;
                     //sess.sfid= req.body.sfid;
                     //sess.name = req.body.name;
                     res.redirect('/launchpad');
