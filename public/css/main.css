@@ -43,7 +43,7 @@ padding-top: 1em;
 
 #error {
 
-    background: red;
+    background: #E94333;
     color:white;
     font-size: 14px;
     font-weight: bold;
@@ -70,7 +70,7 @@ padding-top: 1em;
 
 #effect:hover {
 
-background: #072754;
+background: #FFD100;
 font-size: 16px;
 font-weight: bold;
     
@@ -155,7 +155,7 @@ color: white;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 40px;
-  background: #FFD100;
+  background: #072754;
 }
 
 
@@ -175,7 +175,7 @@ padding-top: 1em;
 
 #welcome_user {
 
-color: #072754;
+color: #FFD100;
 font-weight: bold;
 font-size: 1em;
 text-align: center;
@@ -254,7 +254,7 @@ background-color: #E1410A;
 
 .bg-blue {
 
-background-color: #0047AB;
+background-color: #FFD100;
 
 
 }
