@@ -140,7 +140,7 @@ app.post('/listinglinks',function(req,res) {
      
      if (err) console.error(err);
         
-        var select = 'SELECT link_name__c, name, links__c FROM salesforce.SDI_Reps_Link__c WHERE name = $1';
+        var select = 'SELECT link_name__c, name, links__c FROM salesforce.SDI_Reps_Link__c WHERE name = $2';
         conn.query(select, function(err, result) {
           
            if (err) {
