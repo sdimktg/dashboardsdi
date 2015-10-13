@@ -140,9 +140,9 @@ app.get('/listinglinks',function(req,res) {
      
      if (err) console.error(err);
          
-        var    nameID = localStorage.getItem("name");
+        //var    nameID = localStorage.getItem("name");
         
-        var select = 'SELECT name, links__c FROM salesforce.SDI_Reps_Link__c WHERE name = nameID ';
+        var select = 'SELECT name, links__c FROM salesforce.SDI_Reps_Link__c ';
         conn.query(select, function(err, result) {
           
            if (err) {
