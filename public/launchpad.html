@@ -20,9 +20,20 @@
         $(function() {
         
         var employee_name = localStorage.getItem("employee_name__c");
-        var name = localStorage.getItem("name");
+        var nameID = localStorage.getItem("name");
             
-            alert(name);
+                            $.ajax({
+                        url: "/listinglinks",
+                        method: POST,
+                        data: JSON.stringify({
+                            nameID: nameID
+                        
+                        });
+                       
+         
+                });
+            
+            alert(nameID);
             
             $("#welcome_user1").append(employee_name);
             $("#welcome_user2").append(employee_name);
