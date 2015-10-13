@@ -20,6 +20,9 @@
         $(function() {
         
         var employee_name = localStorage.getItem("employee_name__c");
+        var name = localStorage.getItem("name");
+            
+            alert(name);
             
             $("#welcome_user1").append(employee_name);
             $("#welcome_user2").append(employee_name);
