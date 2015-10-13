@@ -94,7 +94,10 @@ color: black;
 }
 
 
-.welcome_user1 {
+#welcome_user2 {
+    
+    font-weight: bold;
+    
 
 
 
@@ -191,7 +194,7 @@ color: white;
 
 #dashboard_t {
 
-padding-top: 1em;
+
 
 }
 
