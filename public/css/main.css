@@ -32,8 +32,7 @@ color: #FFD100;
 
 #logout_l {
 
-position: relative;
-
+float:right;  
 }
 
 #welcome {
@@ -41,9 +40,7 @@ padding-top: 1em;
     background: #072754;
     color: #FFD100;
     font-size: 24px;
-    text-align: center;
-    
-    
+    text-align: center;    
 }
 
 #error {
@@ -53,17 +50,21 @@ padding-top: 1em;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-   
+}
 
-
+#logout {
+    
+    
+    font-weight: bold;
+    color: white;
+    font-size: 1em;
 }
 
 
 #loginModal {
 
     padding-top: 10em;
-
-    
+   
 }
 
 #intro {
@@ -104,7 +105,7 @@ color: black;
 
 #style_btn {
 
-background: #FFD100;
+    background: #FFD100;
     color: #072754;
     font-weight: bold;
 
@@ -124,8 +125,6 @@ color: white;
     background: #072754;
     color: #FFD100;
     font-size: 24px;
-
-
 }
 
 
@@ -278,8 +277,6 @@ background-color: #581A4A;
 .bg-darkred {
     
     background-color: #AD0615;
-
-
 }
 
 

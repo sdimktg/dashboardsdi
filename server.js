@@ -80,20 +80,6 @@ app.post('/check', function(req, res) {
 
 
 
-
-
-
-/***********************************************************************************************
-Get the session variable and compare in the database get the hashid and employee name !!!!
-
-
-
-TRY 
-
-
-
-
-************************************************************************************************/
 app.get('/check', function(req, res) {
     
     sess=req.session;
@@ -113,28 +99,9 @@ app.get('/check', function(req, res) {
             
             });
         });
-});
+}); 
 
 
-
-
-
-
-
-app.get('/launchpad',function(req,res){
-sess=req.session;
-if(sess.sfid)
-{
-res.write('<h1>Hello '+sess.sfid+'</h1>');
-res.end('<a href="+">Logout</a>');
-}
-else
-{
-res.write('<h1>Please login first.</h1>');
-res.end('<a href="+">Login</a>');
-}
-
-});
 
 app.get('/logout',function(req,res){
 
@@ -144,7 +111,7 @@ console.log(err);
 }
 else
 {
-res.redirect('/');
+res.redirect('/index.html');
 }
 });
 
