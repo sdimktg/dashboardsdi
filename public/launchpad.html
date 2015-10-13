@@ -32,7 +32,7 @@
                 });
 */
             $("#welcome_user1").append(employee_name);
-            $("#welcome_user2").append(employee_name);
+            $("#welcome_user2").append( "Welcome" + employee_name);
             
              $.ajax({ // ajax call starts
             url: '/listinglinks', 
@@ -52,9 +52,7 @@
                     r.append($(" <div class='info-box-content'>"));
                     r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
                     r.append($("</a></div></div>"));
-                    
-                    
-                    
+    
           });
     
             }
@@ -95,10 +93,9 @@
          </div>
 </nav>
     
-    <div id="left_side" class="container-fluid col-xs-2">
+    <div id="left_side" class="container-fluid col-xs-12">
          <div  class="row">
-            <p id="welcome_user"><i class="fa fa-user fa-2x"></i>Welcome</p>
-             <p style="color:black; font-weight: bold;" id="welcome_user2"></p>
+            <p id="welcome_user2"><i class="fa fa-user fa-2x"></i></p>
         </div>
     
     </div>
@@ -108,15 +105,14 @@
              
              
              <div id="links_info" class= "col-md-3 col-sm-6 col-xs-12">
-             
-             
-             
-             
+            
              </div>
              
             </div><!-- /.col -->
              
-        </div>    
+        </div> 
+    <br>
+    <br>
     <footer class="footer">
       <div class="container">
         <p id="footer1">All Rights Reserved. © SDImktg 2015</p>
