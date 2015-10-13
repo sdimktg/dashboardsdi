@@ -19,11 +19,36 @@
         
         $(function() {
         
-    var    employee_name = localStorage.getItem("employee_name__c");
+        var employee_name = localStorage.getItem("employee_name__c");
             
             $("#welcome_user1").append(employee_name);
             $("#welcome_user2").append(employee_name);
-});
+            
+             $.ajax({ // ajax call starts
+            url: '/listinglinks', 
+            type:"GET",
+            dataType: 'json', // Choosing a JSON datatype
+            contentType: "application/json; charset=utf-8",
+           
+            success: function(data) {
+
+                var info = data.rows;
+                data.rows.forEach(function(row){
+                    
+                   var r = $("<a id= "+row.name+" href="+row.url+">");
+                    $("#links_info").append(r);
+                    r.append($("<div class='info-box'>"));
+                    r.append($("<span class='info-box-icon bg-orange'><i class='fa fa-folder-o'></i></span> "));
+                    r.append($(" <div class='info-box-content'>"));
+                    r.append($("<span class='info-box-text'>Link 1</span> "));
+                    r.append($("<span class='info-box-number'>Description1: Lorem ipsum dolor sit amet</span>"));
+                    r.append($("</a></div></div>"));
+                    
+          });
+                  
+            }
+        });
+        });
 
     </script> 
 </head>
@@ -70,16 +95,9 @@
     <div id="dashboard_t" class="container-fluid col-xs-10">
          <div  class="row">
              
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                <a href="#">
-              <div class="info-box">
-               <span class="info-box-icon bg-orange"><i class="fa fa-folder-o"></i></span> 
-                 <div class="info-box-content">
-                      <span class="info-box-text">Link 1</span> 
-                  <span class="info-box-number">Description1: Lorem ipsum dolor sit amet</span>
-             </div> <!-- /.info-box-content -->
-              </div>
-                    </a>   <!-- /.info-box -->
+            <div id="links_info" class="col-md-3 col-sm-6 col-xs-12">
+               
+           
             </div><!-- /.col -->
              
              <div class="col-md-3 col-sm-6 col-xs-12">
