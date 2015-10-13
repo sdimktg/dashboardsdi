@@ -45,15 +45,14 @@
                 
                 data.rows.forEach(function(row){
 
-                    var r = ("div class= 'col-md-3 col-sm-6 col-xs-12'");
+                    var r = ("<a id= "+row.name+" href="+row.links__c+" target='_blank'>");
                     $("#links_info").append(r);
-                    r.append($("<a id= "+row.name+" href="+row.links__c+" target='_blank'>"));
                     r.append($("<div class='info-box'>"));
                     r.append($("<span class='info-box-icon bg-orange'><i class='fa fa-folder-o'></i></span> "));
                     r.append($(" <div class='info-box-content'>"));
                     r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
                     r.append($("<span class='info-box-number'>Description1: Lorem ipsum dolor sit amet</span>"));
-                    r.append($("</div></a></div></div>"));
+                    r.append($("</a></div></div>"));
                     
           });
     
@@ -105,6 +104,14 @@
 
     <div id="dashboard_t" class="container-fluid col-xs-10">
          <div id="links_info" class="row">
+             
+             
+             <div id="links_info" class= "col-md-3 col-sm-6 col-xs-12">
+             
+             
+             
+             
+             </div>
              
             </div><!-- /.col -->
              
