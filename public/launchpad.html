@@ -35,9 +35,7 @@
                 
                 data.rows.forEach(function(row){
                     
-                   var r = $("<a id= "+row.name+" href="+row.links__c+">");
-                    
-                    alert(r);
+                   var r = $("<a id= "+row.name+" href="+row.links__c+" target='_blank'>");
                     $("#links_info").append(r);
                     r.append($("<div class='info-box'>"));
                     r.append($("<span class='info-box-icon bg-orange'><i class='fa fa-folder-o'></i></span> "));
