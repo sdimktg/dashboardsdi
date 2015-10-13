@@ -105,23 +105,14 @@ app.get('/check', function(req, res) {
 
 app.get('/logout',function(req,res){
     
-    req.session = null;
-
-req.session.destroy(function(err){
+  req.session = null;
+  res.redirect('/index.html');  
     
-    
-if(err){
-console.log(err);
-}
-else
-{
-res.redirect('/index.html');
-}
-});
+  
 
 });
 
-
+    
 /***********************************************************************************************
 GET-/Listing: Find the fields from the custom object and display it in the form (index.html)
 ************************************************************************************************/
