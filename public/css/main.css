@@ -227,7 +227,7 @@ text-align: center;
   display: block;
   float: left;
   height: 65px;
-  width: 90px;
+  width: 80px;
   text-align: center;
   font-size: 45px;
   line-height: 90px;
@@ -235,6 +235,7 @@ text-align: center;
 }
 .info-box-icon > img {
   max-width: 100%;
+  color: white;
 }
 .info-box-content {
   padding: 5px 10px;
