@@ -134,16 +134,16 @@ res.redirect('/index.html');
 /******************************************************************************************************
 GET- User Links : Display all the links associated with the user 
 ******************************************************************************************************/
-app.post('/listinglinks',function(req,res) {
+app.get('/listinglinks',function(req,res) {
     
-    var nameID = localStorage.getItem("name");
-    console.log(nameID);
+   // var nameID = localStorage.getItem("name");
+    //console.log(nameID);
 
      pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
      
      if (err) console.error(err);
         
-        var select = 'SELECT link_name__c, name, links__c FROM salesforce.SDI_Reps_Link__c WHERE name = nameID';
+        var select = 'SELECT link_name__c, name, links__c FROM salesforce.SDI_Reps_Link__c ';
         conn.query(select, function(err, result) {
           
            if (err) {
