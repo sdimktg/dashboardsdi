@@ -20,7 +20,7 @@
 
 a:hover {
 
-color: #FFD100;
+color: white;
 
 }
 
@@ -264,7 +264,15 @@ text-align: center;
 .bg-orange {
 
 
-background-color: #E1410A;
+background-color: #072754;
+
+}
+
+
+.link_color {
+
+color: #FFD100;
+
 
 }
 
