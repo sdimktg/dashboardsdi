@@ -104,8 +104,12 @@ app.get('/check', function(req, res) {
 
 
 app.get('/logout',function(req,res){
+    
+    req.session = null;
 
 req.session.destroy(function(err){
+    
+    
 if(err){
 console.log(err);
 }
