@@ -55,7 +55,7 @@ app.post('/check', function(req, res) {
         
         if (err) console.log(err);
         
-     var check  = 'SELECT hashid__c, employee_name__c FROM  salesforce.CDN_Reps__c  WHERE login_pass__c = $1 AND email__c = $2 ';
+     var check  = 'SELECT name, employee_name__c FROM  salesforce.CDN_Reps__c  WHERE login_pass__c = $1 AND email__c = $2 ';
         conn.query(check,[req.body.login_pass__c,req.body.email__c],
        function(err, result){
                 done();
@@ -67,7 +67,7 @@ app.post('/check', function(req, res) {
                 }
                 else {
                     
-                    req.session.hashid__c = req.body.hashid__c;
+                    req.session.name = req.body.name;
                     res.json(result);
                     //sess.sfid= req.body.sfid;
                     //sess.name = req.body.name;
@@ -105,14 +105,57 @@ app.get('/check', function(req, res) {
 
 app.get('/logout',function(req,res){
     
+    
+    /* Testing
+    
   req.session = null;
   res.redirect('/index.html');  
     
-  
+  */
+    
+    
+    req.session.destroy(function(err){
+    
+    
+if(err){
+console.log(err);
+}
+else
+{
+res.redirect('/index.html');
+}
+});
 
 });
 
-    
+
+
+
+/******************************************************************************************************
+GET- User Links : Display all the links associated with the user 
+******************************************************************************************************/
+app.get('/listinglinks',function(req,res) {
+
+     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
+     
+     if (err) console.error(err);
+         
+         var    nameID = localStorage.getItem("name");
+        
+        var select = 'SELECT links_c FROM salesforce.SDI_Reps_Links__c WHERE name = nameID';
+        conn.query(select, function(err, result) {
+          
+           if (err) {
+               
+                res.send('select');
+        
+           }
+            res.json(result);
+         
+            });
+        });
+});
+
 /***********************************************************************************************
 GET-/Listing: Find the fields from the custom object and display it in the form (index.html)
 ************************************************************************************************/

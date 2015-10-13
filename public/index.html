@@ -55,7 +55,7 @@
                             
                         data.rows.forEach(function(row){
                             
-                            var hashid__c = row.hashid__c;
+                            var name = row.name;
                             var employee_name__c = row.employee_name__c;
                             
                             if(localStorage.getItem("employee_name__c"))
@@ -63,9 +63,9 @@
                                 localStorage.setItem("employee_name__c", employee_name__c)
                                 
                                 
-                            if(localStorage.getItem("hashid__c"))
-                                hashid__c = localStorage.getItem("hashid__c");
-                                localStorage.setItem("hashid__c", hashid__c)
+                            if(localStorage.getItem("name"))
+                                name = localStorage.getItem("name");
+                                localStorage.setItem("name", name);
                             
                         });
                             

@@ -22,6 +22,7 @@
     var    employee_name = localStorage.getItem("employee_name__c");
             
             $("#welcome_user1").append(employee_name);
+            $("#welcome_user2").append(employee_name);
 });
 
     </script> 
@@ -55,15 +56,13 @@
         </p>
 
     </div>
-        
-       
          </div>
 </nav>
     
     <div id="left_side" class="container-fluid col-xs-2">
          <div  class="row">
             <p id="welcome_user"><i class="fa fa-user fa-2x"></i>Welcome</p>
-             <p style="color:black; font-weight: bold;" id="welcome_user1"></p>
+             <p style="color:black; font-weight: bold;" id="welcome_user2"></p>
         </div>
     
     </div>
