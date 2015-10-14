@@ -128,17 +128,11 @@ res.redirect('/index.html');
 
 });
 
-
-
-
 /******************************************************************************************************
 GET- User Links : Display all the links associated with the user 
 ******************************************************************************************************/
 app.get('/listinglinks',function(req,res) {
-    
-   // var nameID = localStorage.getItem("name");
-    //console.log(nameID);
-
+   
      pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
      
      if (err) console.error(err);
