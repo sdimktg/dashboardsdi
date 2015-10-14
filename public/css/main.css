@@ -227,7 +227,7 @@ text-align: center;
   color: white;
 }
 .info-box-content {
-  padding: 5px 10px;
+  padding: 30px 10px;
   margin-left: 90px;
 }
 .info-box-number {
@@ -262,9 +262,6 @@ background-color: #072754;
 .link_color {
 
 color: #900902;
-padding-bottom: 2em;
-
-
 }
 
 .bg-green {
