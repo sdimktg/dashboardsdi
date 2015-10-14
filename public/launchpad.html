@@ -23,10 +23,9 @@
         var nameID = localStorage.getItem("name");
         var relatedobject__c = localStorage.getItem("sfid");
 
-            alert(relatedobject__c);
+
             $("#welcome_user1").append(employee_name);
             $("#welcome_user2").append( "Welcome &nbsp; &nbsp;" + employee_name);
-            
             
             
             $.ajax({
@@ -41,11 +40,9 @@
                     
                 data.rows.forEach(function(row){
                     
-                //alert(row.link_name__c);
-
                     var r = $("<a class='link_color' id= "+row.sfid+" href="+row.links__c+" target='_blank'>");
                     $("#links_info").append(r);
-                    r.append($("<span class='info-box-icon bg-orange'><i class='fa fa-hand-pointer-o'></i></span> "));
+                    r.append($("<span class='info-box-icon bg-orange'><i id='icon' class='fa fa-share'></i></span> "));
                     r.append($(" <div class='info-box-content'>"));
                     r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
                     r.append($("</div></a>"));
