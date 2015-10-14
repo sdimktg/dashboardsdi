@@ -136,9 +136,10 @@ app.get('/listinglinks',function(req,res) {
      pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
      
      if (err) console.error(err);
-        
-        var select = 'SELECT link_name__c, name, links__c FROM salesforce.SDI_Reps_Link__c WHERE name = $1';
-        conn.query(select, [req.body.name], function(err, result) {
+         
+         
+         var check = 'SELECT name FROM salesforce.SDI_Reps_Link__c WHERE name = $1';
+            conn.query(check, [req.body.name], function(err, result) {
           
            if (err) {
                
@@ -148,7 +149,24 @@ app.get('/listinglinks',function(req,res) {
             res.json(result);
          
             });
+      /*
+                 
+            var select = 'SELECT link_name__c, name, links__c FROM salesforce.SDI_Reps_Link__c ';
+            conn.query(select, [req.body.name], function(err, result) {
+          
+           if (err) {
+               
+                res.send(err);
+        
+           }
+            res.json(result);
+         
+            });
+            
+            
+            */
         });
+ 
 });
 
 /***********************************************************************************************
