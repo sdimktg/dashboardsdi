@@ -27,24 +27,19 @@
             $("#welcome_user1").append(employee_name);
             $("#welcome_user2").append( "Welcome &nbsp; &nbsp;" + employee_name);
             
-              $.ajax({
-                url: "/listinglinks",
-                data: JSON.stringify({
-                             sfid: sfid
-                        }),
-
-            });
             
-    
-             $.ajax({ // ajax call starts
-            url: '/listinglinks', 
-            type:"GET",
-            dataType: 'json', // Choosing a JSON datatype
-            contentType: "application/json; charset=utf-8",
-           
-            success: function(data) {
-                
-                
+            
+            $.ajax({
+                url: "/listinglinks",
+                method: GET,
+                data: JSON.stringify({
+                            sfid: sfid,
+                            
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(data) {
+                    
                 data.rows.forEach(function(row){
                     
                 //alert(row.link_name__c);
@@ -56,10 +51,11 @@
                     r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
                     r.append($("</div></a>"));
     
-          });
-    
-            }
-        });
+                    });
+                }
+
+            });
+            
         });
 
     </script> 
