@@ -21,6 +21,7 @@
         
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
+        var sfid = localStorage.getItem("sfid");
 
             $("#welcome_user1").append(employee_name);
             $("#welcome_user2").append( "Welcome &nbsp; &nbsp;" + employee_name);
@@ -28,7 +29,7 @@
               $.ajax({
                 url: "/listinglinks",
                 data: JSON.stringify({
-                             nameID: nameID
+                             sfid: sfid
                         }),
 
             });

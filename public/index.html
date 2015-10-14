@@ -57,6 +57,7 @@
                             
                             var name = row.name;
                             var employee_name__c = row.employee_name__c;
+                            var sfid = row.sfid;
                             
                             if(localStorage.getItem("employee_name__c"))
                                 employee_name__c = localStorage.getItem("employee_name__c");
@@ -66,6 +67,12 @@
                             if(localStorage.getItem("name"))
                                 name = localStorage.getItem("name");
                                 localStorage.setItem("name", name);
+                            
+                            
+                                 
+                            if(localStorage.getItem("sfid"))
+                                sfid = localStorage.getItem("sfid");
+                                localStorage.setItem("sfic", sfid);
                             
                         });
                             
