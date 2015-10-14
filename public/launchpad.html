@@ -21,16 +21,22 @@
         
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
-            /*
-                            $.ajax({
-                        url: "/listinglinks",
-                        type:"POST",
-                        data: JSON.stringify({
-                            nameID: nameID
+               
+            $.ajax({
+                url: "/listinglinks",
+                data: JSON.stringify({
+                             nameID: nameID
+                        }),
+                contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function(data) {
                         
-                        })
-                });
-*/
+                        },
+                        error: function(err) {
+                            
+                        }
+                    });
+            
             $("#welcome_user1").append(employee_name);
             $("#welcome_user2").append( "Welcome &nbsp; &nbsp;" + employee_name);
             
@@ -49,7 +55,7 @@
 
                     var r = $("<a class='link_color' id= "+row.name+" href="+row.links__c+" target='_blank'>");
                     $("#links_info").append(r);
-                    r.append($("<span class='info-box-icon bg-orange'><i class='fa fa-folder-o'></i></span> "));
+                    r.append($("<span class='info-box-icon bg-orange'><i class='fa fa-hand-pointer-o'></i></span> "));
                     r.append($(" <div class='info-box-content'>"));
                     r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
                     r.append($("</div></a>"));
