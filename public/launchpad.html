@@ -23,6 +23,7 @@
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
         var relatedobject = localStorage.getItem("sfid");
+             var id = 8;
             
             alert(relatedobject);
 
@@ -34,6 +35,7 @@
                 url: "/listinglinks",
                 data: JSON.stringify({
                             relatedobject: relatedobject,
+                            id: id
                             
                 }),
                 contentType: "application/json; charset=utf-8",
