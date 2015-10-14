@@ -147,7 +147,7 @@ app.get('/listinglinks',function(req,res) {
                      console.error(check);
                      console.log(check);
                     
-                    res.status(400).json({error: err});
+                    res.status(400).json({error: check});
                 }
                 else {
                     
