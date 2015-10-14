@@ -138,7 +138,7 @@ app.get('/listinglinks',function(req,res) {
      if (err) console.error(err);
          
          
-         var check = 'SELECT name FROM salesforce.SDI_Reps_Link__c WHERE employee_name__c = $1';
+         var check = 'SELECT name FROM salesforce.SDI_Reps_Link__c WHERE name = $1';
             conn.query(check, [req.body.name], function(err, result) {
           
            if (err) {
