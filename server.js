@@ -139,16 +139,28 @@ app.get('/listinglinks',function(req,res) {
          
          
          var check = 'SELECT name FROM salesforce.SDI_Reps_Link__c WHERE name = $1';
-            conn.query(check, [req.body.name], function(err, result) {
-          
-           if (err) {
-               
-                res.send(err);
-        
-           }
-            res.json(result);
-         
-            });
+            conn.query(check, [req.body.name],
+            
+            function(err, result){
+                done();
+                if (err != null || result.rowCount == 0) {
+                     console.error(err);
+                     console.log(check);
+                    
+                    res.status(400).json({error: err});
+                }
+                else {
+                    
+                    
+                    res.json(result);
+                    //sess.sfid= req.body.sfid;
+                    //sess.name = req.body.name;
+                   // res.redirect('/launchpad.html');
+                }
+                   
+        });
+                       
+
       /*
                  
             var select = 'SELECT link_name__c, name, links__c FROM salesforce.SDI_Reps_Link__c ';
