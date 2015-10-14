@@ -246,10 +246,10 @@ text-align: center;
   text-overflow: ellipsis;
 }
 .info-box-text {
-padding-bottom: 3em;
-  text-transform: uppercase;
+    padding-bottom: 2em;
     font-weight: bold;
-    text-align: center;
+    text-align:left;
+    
 }
 
 
