@@ -245,6 +245,7 @@ text-align: center;
   text-overflow: ellipsis;
 }
 .info-box-text {
+padding-bottom: 3em;
   text-transform: uppercase;
     font-weight: bold;
     text-align: center;
