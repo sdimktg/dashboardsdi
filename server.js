@@ -50,7 +50,6 @@ Check the user credentials in salesforce
 ************************************************************************************************/
 app.post('/check', function(req, res) {
     
-    //sess=req.session;
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
         
         if (err) console.log(err);
@@ -69,9 +68,7 @@ app.post('/check', function(req, res) {
                     
                     req.session.name = req.body.name;
                     res.json(result);
-                    //sess.sfid= req.body.sfid;
-                    //sess.name = req.body.name;
-                   // res.redirect('/launchpad.html');
+                
                 }
                    
         });   
@@ -104,27 +101,19 @@ app.get('/check', function(req, res) {
 
 
 app.get('/logout',function(req,res){
-    
-    
-    /* Testing
-    
-  req.session = null;
-  res.redirect('/index.html');  
-    
-  */
-    
+
     
     req.session.destroy(function(err){
     
     
-if(err){
-console.log(err);
-}
-else
-{
-res.redirect('/index.html');
-}
-});
+        if(err){
+            console.log(err);
+        }
+        else
+        {
+            res.redirect('/index.html');
+        }
+    });
 
 });
 
@@ -138,8 +127,8 @@ app.get('/listinglinks',function(req,res) {
      if (err) console.error(err);
          
          
-         var check = 'SELECT sfid, links__c, link_name__c FROM salesforce.SDI_Reps_Link__c ';
-            conn.query(check,
+         var check = 'SELECT sfid, links__c, link_name__c FROM salesforce.SDI_Reps_Link__c WHERE relatedobject__c = $1 ';
+            conn.query(check,[req.body.relatedobject__c]
             
             function(err, result){
                 done();
@@ -151,33 +140,12 @@ app.get('/listinglinks',function(req,res) {
                 }
                 else {
                     
-                    
                     res.json(result);
-                    //sess.sfid= req.body.sfid;
-                    //sess.name = req.body.name;
-                   // res.redirect('/launchpad.html');
                 }
                    
         });
                        
-
-      /*
-                 
-            var select = 'SELECT link_name__c, name, links__c FROM salesforce.SDI_Reps_Link__c ';
-            conn.query(select, [req.body.name], function(err, result) {
-          
-           if (err) {
-               
-                res.send(err);
-        
-           }
-            res.json(result);
-         
-            });
-            
-            
-            */
-        });
+    });
  
 });
 
