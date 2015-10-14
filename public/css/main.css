@@ -229,6 +229,7 @@ text-align: center;
 .info-box-content {
   padding: 30px 10px;
   margin-left: 90px;
+  width: 60px;
 }
 .info-box-number {
   display: block;
