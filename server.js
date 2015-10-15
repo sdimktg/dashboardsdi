@@ -134,7 +134,7 @@ app.get('/listinglinks',function(req,res) {
                 done();
                 if (err != null || result.rowCount == 0) {
                     
-                    res.status(400).json({error: err});
+                    res.status(400).json({error: err, query: links});
                 }
                 else {
                     
