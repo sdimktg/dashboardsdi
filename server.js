@@ -133,8 +133,6 @@ app.get('/listinglinks',function(req,res) {
             function(err, result){
                 done();
                 if (err != null || result.rowCount == 0) {
-                     console.error(check);
-                     console.log(check);
                     
                     res.status(400).json({error: err});
                 }
