@@ -25,7 +25,7 @@
         var relatedobject__c = localStorage.getItem("sfid");
            
             
-            //alert(relatedobject__c);
+            alert(relatedobject__c);
 
             $("#welcome_user1").append(employee_name);
             $("#welcome_user2").append( "&nbsp; Welcome &nbsp; &nbsp;" + employee_name);
@@ -33,13 +33,19 @@
             
             $.ajax({
                 url: "/listinglinks",
+                method: post,
                 data: JSON.stringify({
                     relatedobject__c: relatedobject__c,
+<<<<<<< HEAD
 <<<<<<< HEAD
                           
                             
 =======
 >>>>>>> parent of e301bdf... Revert "testing query"
+=======
+                   
+         
+>>>>>>> parent of 5de00fc... testing query
                 }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
