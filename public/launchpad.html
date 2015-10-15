@@ -23,7 +23,7 @@
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
         var relatedobject__c = localStorage.getItem("sfid");
-        var name = 'LINK-0004';   
+       
             
             alert(relatedobject__c);
 
@@ -33,11 +33,11 @@
             
             $.ajax({
                 url: "/listinglinks",
+                method: post,
                 data: JSON.stringify({
-                    relatedobject__c: relatedobject__c,
-                    name: name
-                          
-                            
+                    relatedobject__c: relatedobject__c
+                   
+         
                 }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -57,6 +57,7 @@
 
             });
             
+               
         });
 
     </script> 
