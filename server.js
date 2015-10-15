@@ -120,15 +120,15 @@ app.get('/logout',function(req,res){
 /******************************************************************************************************
 GET- User Links : Display all the links associated with the user 
 ******************************************************************************************************/
-app.post('/listinglinks',function(req,res) {
+app.get('/listinglinks',function(req,res) {
    
      pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
      
      if (err) console.error(err);
          
          
-         var links = 'SELECT sfid, links__c, link_name__c FROM salesforce.SDI_Reps_Link__c WHERE  relatedobject__c = $1 ';
-            conn.query(links, [req.body.relatedobject__c],
+         var check = 'SELECT sfid, links__c, link_name__c FROM salesforce.SDI_Reps_Link__c WHERE  RelatedObject__c = $1 ';
+            conn.query(check,[req.body.RelatedObject__c],
             
             function(err, result){
                 done();
