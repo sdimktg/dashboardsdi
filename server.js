@@ -127,8 +127,8 @@ app.get('/listinglinks',function(req,res) {
      if (err) console.error(err);
          
          
-         var links = 'SELECT sfid,link_name__c, links__c  FROM salesforce.SDI_Reps_Link__c WHERE RelatedObject__c = $1 ';
-            conn.query(links,[req.body.relatedobject__c],
+         var links = 'SELECT sfid,link_name__c, links__c  FROM salesforce.SDI_Reps_Link__c WHERE relatedobject__c = $1 ';
+            conn.query(links,[req.body.related],
             
             function(err, result){
                 done();
