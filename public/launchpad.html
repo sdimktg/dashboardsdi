@@ -42,7 +42,15 @@
                 data.rows.forEach(function(row){
                     
                     
+                    var print = $("<div  class='col-lg-3 col-md-6'><a  id= "+row.sfid+" href="+row.links__c+" target='_blank'><div class='panel panel-green'><div class='panel-heading'><div class='row'><div class='col-xs-3'><i id='icon' class='fa fa-external-link fa-3x'></i></div><div class='col-xs-9 text-right'> <div id='icon' class='huge'>"+row.link_name__c+"</div></div>");
                     
+                    print+= $("</div></div></div></a></div>");
+                    
+                    $("#links_info").append(print);
+                    
+                    
+                    
+                 /*   
                     var p =$("<div  class='col-lg-3 col-md-6'>");
                     var r =$("<a  id= "+row.sfid+" href="+row.links__c+" target='_blank'>");
                     var i =$("<div class='panel panel-green'>");
@@ -66,6 +74,8 @@
                     r.append($("</a>"));
                     p.append($("</div>"));
 //r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
+
+*/
                     });
                 }
 
