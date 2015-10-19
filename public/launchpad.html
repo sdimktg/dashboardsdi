@@ -41,15 +41,17 @@
                     
                 data.rows.forEach(function(row){
                     
-                    var r = $("<a  id= "+row.sfid+" href="+row.links__c+" target='_blank'>");
+                    var r =$(" <div  class='col-lg-3 col-md-6'>");
+                   // var r = $("");
                     $("#links_info").append(r);
+                    r.append($("<a  id= "+row.sfid+" href="+row.links__c+" target='_blank'>"));
                     r.append($("<div class='panel panel-green'> "));
                     r.append($(" <div class='panel-heading'>"));
                     r.append($("<div class='row'>"));
                     r.append($("<div class='col-xs-3'><i id='icon' class='fa fa-external-link fa-3x'></i></div>"));
                     r.append($("<div class='col-xs-9 text-right'> <div id='icon' class='huge'>"+row.link_name__c+"</div></div>"));
                     r.append($("<div class='row'>"));
-                    r.append($("</div></div></div></a>"));
+                    r.append($("</div></a></div></div></div>"));
 //r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
                     });
                 }
@@ -124,9 +126,11 @@
 
                 <!-- /.row -->
 
-                <div class="row">
+                <div id="links_info" class="row">
                     
-                    <div id="links_info" class="col-lg-3 col-md-6">
+                    <div  class="col-lg-3 col-md-6">
+                        
+                       
                            
                     </div>
                     
