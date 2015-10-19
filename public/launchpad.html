@@ -22,8 +22,6 @@
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
         var related = localStorage.getItem("sfid");
-      
-            alert(related);
 
             $("#welcome_user1").append(employee_name);
             $("#welcome_user2").append( "&nbsp; Welcome &nbsp; &nbsp;" + employee_name);
@@ -43,13 +41,16 @@
                     
                 data.rows.forEach(function(row){
                     
-                    var r = $("<a class='link_color' id= "+row.sfid+" href="+row.links__c+" target='_blank'>");
+                    var r = $("<a  id= "+row.sfid+" href="+row.links__c+" target='_blank'>");
                     $("#links_info").append(r);
-                    r.append($("<span class='info-box-icon bg-orange'><i id='icon' class='fa fa-share'></i></span> "));
-                    r.append($(" <div class='info-box-content'>"));
-                    r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
-                    r.append($("</div></a>"));
-    
+                    r.append($("<div class='panel panel-green'> "));
+                    r.append($(" <div class='panel-heading'>"));
+                    r.append($("<div class='row'>"));
+                    r.append($("<div class='col-xs-3'><i id='icon' class='fa fa-external-link fa-3x'></i></div>"));
+                    r.append($("<div class='col-xs-9 text-right'> div id='icon' class='huge'>"+row.link_name__c+"</div></div>"));
+                    r.append($("<div class='row'>"));
+                    r.append($("</div></div></div></a>"));
+
                     });
                 }
 
@@ -60,54 +61,91 @@
     </script> 
 </head>
 <body>
-<nav id="nav_color_intro" class="navbar navbar-inverse ">
     
-    <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header ">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-     <a class="navbar-brand" href="#">
-        <img alt="Brand" src="img/sdi_dashboard.png" >
-    </a>
-        
-    </div>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html" ><img alt="Brand" src="img/sdi_dashboard.png" ></a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="welcome_user1"><i class="fa fa-user fa-2x"></i>  <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="#"><i class="fa fa-fw fa-link"></i>Links</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           SDI<small>LaunchPad </small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-link fa-lg"></i> Links
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <!-- /.row -->
+
+                <div class="row">
+                    
+                    <div id="links_info" class="col-lg-3 col-md-6">
+                           
+                    </div>
+                    
+
+                </div>
+                <!-- /.row -->
+
+                <!-- /.row -->
+
  
-    
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        
-        <p class="navbar-text pull-right">
-        
-        <b id="welcome_user1"></b>
-             <a id="logout" href="/logout" class="navbar-link">Logout</a>&nbsp;
-        </p>
+                <!-- /.row -->
 
-    </div>
-         </div>
-</nav>
-    
-    <div id="left_side" class="container-fluid col-xs-12">
-         <div  class="row">
-            <p id="welcome_user2"><i class="fa fa-user fa-2x"></i></p>
+            </div>
+            <!-- /.container-fluid -->
+
         </div>
-    
+        <!-- /#page-wrapper -->
+
     </div>
-    
-    <div class="container-fluid col-xs-2"></div>
-
-    <div id="dashboard_t" class="container-fluid col-xs-10">
-         <div  class="row">
-             
-             <div id="links_info"  class= "col-md-3 col-sm-6 col-xs-12">
-                 
-             </div>
-
-        </div>    
-    </div> 
     
     <footer class="footer">
       <div class="container">

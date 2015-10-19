@@ -1,7 +1,236 @@
-    body,html{
-		height: 100%;
-       
-	}
+body {
+    margin-top: 100px;
+    background-color: #072754;
+}
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
+#wrapper {
+    padding-left: 0;
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #999;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #000;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+ul.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li.message-preview {
+    width: 275px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+li.message-preview>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+li.message-footer {
+    margin: 5px 0;
+}
+
+ul.alert-dropdown {
+    width: 200px;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 51px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #072754;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #000 !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+    display: block;
+    height: 400px;
+}
+
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Colored Panels */
+
+.huge {
+    font-size: 30px;
+}
+
+#icon {
+    
+color: #FFD100;
+
+}
+
+
+#l_hover:hover {
+
+   background-color: red;
+
+
+}
+
+.panel-green {
+    border-color: #072754;
+}
+
+.panel-green > .panel-heading {
+    border-color:#072754;
+    color: #fff;
+    background-color: #072754;
+}
+
+.panel-green > a {
+    color:#072754;
+}
+
+.panel-green > a:hover {
+    color: black;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red > a {
+    color: #d9534f;
+}
+
+.panel-red > a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow > .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow > a {
+    color: #f0ad4e;
+}
+
+.panel-yellow > a:hover {
+    color: #df8a13;
+}
 
 
 #text_nav {
@@ -304,142 +533,3 @@ background-color: #581A4A;
 
 	/*Remove rounded coners*/
 
-	nav.sidebar.navbar {
-		border-radius: 0px;
-	}
-
-	nav.sidebar, .main{
-		-webkit-transition: margin 200ms ease-out;
-	    -moz-transition: margin 200ms ease-out;
-	    -o-transition: margin 200ms ease-out;
-	    transition: margin 200ms ease-out;
-	}
-
-	/* Add gap to nav and right windows.*/
-	.main{
-		padding: 10px 10px 0 10px;
-	}
-
-	/* .....NavBar: Icon only with coloring/layout.....*/
-
-	/*small/medium side display*/
-	@media (min-width: 768px) {
-
-		/*Allow main to be next to Nav*/
-		.main{
-			position: absolute;
-			width: calc(100% - 40px); /*keeps 100% minus nav size*/
-			margin-left: 40px;
-			float: right;
-		}
-
-		/*lets nav bar to be showed on mouseover*/
-		nav.sidebar:hover + .main{
-			margin-left: 200px;
-		}
-
-		/*Center Brand*/
-		nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-			margin-left: 0px;
-		}
-		/*Center Brand*/
-		nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
-			text-align: center;
-			width: 100%;
-			margin-left: 0px;
-		}
-
-		/*Center Icons*/
-		nav.sidebar a{
-			padding-right: 13px;
-		}
-
-		/*adds border top to first nav box */
-		nav.sidebar .navbar-nav > li:first-child{
-			border-top: 1px #e5e5e5 solid;
-		}
-
-		/*adds border to bottom nav boxes*/
-		nav.sidebar .navbar-nav > li{
-			border-bottom: 1px #e5e5e5 solid;
-		}
-
-		/* Colors/style dropdown box*/
-		nav.sidebar .navbar-nav .open .dropdown-menu {
-			position: static;
-			float: none;
-			width: auto;
-			margin-top: 0;
-			background-color: transparent;
-			border: 0;
-			-webkit-box-shadow: none;
-			box-shadow: none;
-		}
-
-		/*allows nav box to use 100% width*/
-		nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
-			padding: 0 0px 0 0px;
-		}
-
-		/*colors dropdown box text */
-		.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-			color: #777;
-		}
-
-		/*gives sidebar width/height*/
-		nav.sidebar{
-			width: 250px;
-			height: 100%;
-			margin-left: -160px;
-			float: left;
-			z-index: 8000;
-			margin-bottom: 0px;
-		}
-
-		/*give sidebar 100% width;*/
-		nav.sidebar li {
-			width: 100%;
-		}
-
-		/* Move nav to full on mouse over*/
-		nav.sidebar:hover{
-			margin-left: 0px;
-		}
-		/*for hiden things when navbar hidden*/
-		.forAnimate{
-			opacity: 0;
-		}
-	}
-
-	/* .....NavBar: Fully showing nav bar..... */
-
-	@media (min-width: 1330px) {
-
-		/*Allow main to be next to Nav*/
-		.main{
-			width: calc(100% - 200px); /*keeps 100% minus nav size*/
-			margin-left: 200px;
-		}
-
-		/*Show all nav*/
-		nav.sidebar{
-			margin-left: 0px;
-			float: left;
-		}
-		/*Show hidden items on nav*/
-		nav.sidebar .forAnimate{
-			opacity: 1;
-		}
-	}
-
-	nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
-		color: #CCC;
-		background-color: transparent;
-	}
-
-	nav:hover .forAnimate{
-		opacity: 1;
-	}
-	section{
-		padding-left: 15px;
-	}
