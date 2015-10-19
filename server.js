@@ -120,7 +120,7 @@ app.get('/logout',function(req,res){
 /******************************************************************************************************
 GET- User Links : Display all the links associated with the user 
 ******************************************************************************************************/
-app.pos('/listinglinks',function(req,res) {
+app.post('/listinglinks',function(req,res) {
    
      pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
      
