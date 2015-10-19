@@ -107,7 +107,7 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 80px;
+        top: 60px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
@@ -161,7 +161,7 @@ ul.alert-dropdown {
 /* Custom Colored Panels */
 
 .huge {
-    font-size: 30px;
+    font-size: 24px;
 }
 
 #icon {
