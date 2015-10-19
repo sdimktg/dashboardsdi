@@ -47,35 +47,7 @@
                     print+= "</div></div></div></a></div>";
                     
                     $("#links_info").append(print);
-                    
-                    
-                    
-                 /*   
-                    var p =$("<div  class='col-lg-3 col-md-6'>");
-                    var r =$("<a  id= "+row.sfid+" href="+row.links__c+" target='_blank'>");
-                    var i =$("<div class='panel panel-green'>");
-                    var n =$("<div class='panel-heading'>");
-                    var t =$("<div class='row'>");
-                   // var r = $("");
-                    $("#links_info").append(p);
-                    $("#links_info").append(r);
-                    $("#links_info").append(i);
-                    $("#links_info").append(n);
-                    $("#links_info").append(t);
-                    //r.append($(""));
-                   // r.append($("<div class='panel panel-green'> "));
-                    //r.append($(" <div class='panel-heading'>"));
-                    //r.append($(""));
-                   // t.append($("<div class='col-xs-3'><i id='icon' class='fa fa-external-link fa-3x'></i></div>"));
-                //    t.append($("<div class='col-xs-9 text-right'> <div id='icon' class='huge'>"+row.link_name__c+"</div></div>"));
-                    t.append($("</div>"));
-                    n.append($("</div>"));
-                    i.append($("</div>"));
-                    r.append($("</a>"));
-                    p.append($("</div>"));
-//r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
 
-*/
                     });
                 }
 
@@ -90,7 +62,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav id="nav_color_intro" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -99,7 +71,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" ><img alt="Brand" src="img/sdi_dashboard.png" ></a>
+                <a class="navbar-brand" href="index.html" ><img alt="Brand" src="img/sdi_dashboard.png" height="20px" ></a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -139,7 +111,7 @@
                            SDI<small>LaunchPad </small>
                         </h1>
                         <ol class="breadcrumb">
-                            <li class="active">
+                            <li  class="active">
                                 <i class="fa fa-link fa-lg"></i> Links
                             </li>
                         </ol>
