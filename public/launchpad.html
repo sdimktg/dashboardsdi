@@ -43,10 +43,12 @@
                     
                     
                     
-                    var r =$(" <div  class='col-lg-3 col-md-6'>");
+                    var p =$("<div  class='col-lg-3 col-md-6'>");
+                    var r =$("<a  id= "+row.sfid+" href="+row.links__c+" target='_blank'>");
                    // var r = $("");
+                    $("#links_info").append(p);
                     $("#links_info").append(r);
-                    r.append($("<a  id= "+row.sfid+" href="+row.links__c+" target='_blank'>"));
+                    r.append($(""));
                     r.append($("<div class='panel panel-green'> "));
                     r.append($(" <div class='panel-heading'>"));
                     r.append($("<div class='row'>"));
@@ -55,8 +57,8 @@
                    // r.append($("</div>"));
                     //r.append($("</div>"));
                    // r.append($("</div>"));
-                   // r.append($("</a>"));
-                    r.append($("</div>"));
+                    r.append($("</a>"));
+                    p.append($("</div>"));
 //r.append($("<span class='info-box-text'>"+row.link_name__c +"</span> "));
                     });
                 }
