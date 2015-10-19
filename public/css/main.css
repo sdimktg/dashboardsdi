@@ -177,6 +177,12 @@ font-weight: bold;
 
 }
 
+#new_kpf{
+
+height: 510px;
+
+}
+
 
 #l_hover:hover {
 
@@ -397,11 +403,6 @@ color: white;
 }
 
 
-.form{
-    
-    padding-top: 4em;
-
-}
 
 
 #icon {

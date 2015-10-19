@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SDI LaunchPad</title>
+    <title>SDI KPF Reporting</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -91,10 +91,10 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li  class="active">
-                        <a href="#"><i class="fa fa-fw fa-link"></i>Links</a>
+                    <li  >
+                        <a href="launchpad.html"><i class="fa fa-fw fa-link"></i>Links</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="kpf.html"><i class="fa fa-fw fa-file-o"></i>KPF Reporting</a>
                     </li>
                     
@@ -111,38 +111,73 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                           SDI<small>LaunchPad </small>
+                           SDI<small>Kroger Personal Finance</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li id="links_c"  class="active">
-                                <i class="fa fa-link fa-lg"></i> Links
+                                <i class="fa fa-file-o fa-lg"></i> KPF
                             </li>
                         </ol>
                     </div>
                 </div>
-                <!-- /.row -->
+            
 
-                <!-- /.row -->
-
-                <div id="links_info" class="row">
+                <div  class="row">
                     
+                <div class="col-lg-12">
+
+                <form id="new_kpf" role="form">
+
+                    <div class="form-group">
+                            <label for="date" > Event Date</label>
+                            <div class="input-group input-append date" id="datePicker">
+                            <input id="date_purchased__c" type="text"  placeholder="Event Date" class="form-control" name="" />
+                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Location</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>In-Store Apps Submitted</label>
+                        <input class="form-control" placeholder="Apps Submitted">
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label>Fuel Center Apps Submitted</label>
+                        <input class="form-control" placeholder="Fuel Center Submitted">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Hours</label>
+                        <input class="form-control" placeholder="Hours">
+                    </div>
+                    
+                     <div class="form-group">
+                        <label>Notes</label>
+                        <textarea class="form-control" rows="1"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit </button>
+                    <button type="reset" class="btn btn-default">Reset </button>
+                </form> 
                 </div>
-                <br>
-                <br>
-                <br>
-                <!-- /.row -->
-
-                <!-- /.row -->
-
- 
-                <!-- /.row -->
-
+                
             </div>
             <!-- /.container-fluid -->
 
         </div>
         <!-- /#page-wrapper -->
 
+    </div>
     </div>
     
     <footer class="footer">
