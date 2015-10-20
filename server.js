@@ -103,7 +103,7 @@ app.get('/check', function(req, res) {
 app.get('/logout',function(req,res){
 
     
-    req.session.destroy(function(err){
+    req.session.reset(function(err){
     
     
         if(err){
