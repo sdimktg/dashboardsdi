@@ -111,6 +111,7 @@ app.get('/logout',function(req,res){
         }
         else
         {
+            sess = null;
             res.redirect('/index.html');
         }
     });
