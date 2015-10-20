@@ -7,10 +7,9 @@
     <title>SDI KPF Reporting</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="javascript/events.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -129,11 +128,7 @@
                 <form id="new_kpf" role="form">
 
                     <div class="form-group">
-                            <label for="date">Event Date</label>
-                            <div class="input-group input-append date" id="datePicker">
-                            <input id="date_purchased__c" type="text"  placeholder="Event Date" class="form-control" name="" />
-                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-                            </div>
+                          <label>Event Date</label> <input  type="text" id="datePicker">  
                     </div>
                     
                     <div class="form-group">
@@ -151,7 +146,6 @@
                         <input class="form-control" placeholder="Apps Submitted">
                     </div>
                     
-                    
                     <div class="form-group">
                         <label>Fuel Center Apps Submitted</label>
                         <input class="form-control" placeholder="Fuel Center Submitted">
@@ -166,8 +160,10 @@
                         <label>Notes</label>
                         <textarea class="form-control" rows="1"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit </button>
-                    <button type="reset" class="btn btn-default">Reset </button>
+                    
+                        <button id="style_btn" type="submit" class="btn btn-default ">Submit </button>
+                        <button type="reset" class="btn btn-default">Reset </button>
+                    
                 </form> 
                 </div>
                 
