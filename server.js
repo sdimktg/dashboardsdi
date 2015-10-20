@@ -111,7 +111,7 @@ app.get('/logout',function(req,res){
         }
         else
         {
-            sess = null;
+            connect.sid = null;
             res.redirect('/index.html');
         }
     });
