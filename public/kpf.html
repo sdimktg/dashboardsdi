@@ -125,10 +125,10 @@
                     
                 <div class="col-lg-12">
 
-                <form id="new_kpf" role="form">
+                <form id="new_kpf" role="form" data-toggle="validator">
 
                     <div class="form-group">
-                          <label>Event Date</label> <input  type="text" id="datePicker">  
+                          <label>Event Date</label> <input  type="text" id="datePicker" required>  
                     </div>
                     
                     <div class="form-group">
@@ -143,7 +143,7 @@
                     </div>
                     <div class="form-group">
                         <label>In-Store Apps Submitted</label>
-                        <input class="form-control" placeholder="Apps Submitted">
+                        <input class="form-control" placeholder="Apps Submitted" pattern = "^[0-9]+$" data-error="Please Just Numbers">
                     </div>
                     
                     <div class="form-group">
@@ -152,7 +152,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label>Hours</label>
+                        <label>Hours Worked</label>
                         <input class="form-control" placeholder="Hours">
                     </div>
                     
