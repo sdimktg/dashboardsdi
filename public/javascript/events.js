@@ -154,11 +154,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                 }
 
             });
-    
-    
-    
-    
-    
+
     $('#datePicker')
         .datepicker({
             format: 'mm/dd/yyyy',
