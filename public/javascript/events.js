@@ -5,8 +5,18 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 
 ******************************************************************************************************/
      var Alabama = [
-                {display: "Alabama1", value: "1"},
-                {display: "Alabama2", value: "2"}];
+                
+    "190/Humble/9475 FM 1960 BP","734/League City/250 S. FM 270",
+    "115/Cypress/9703 Barker Cypress Rd.","256/Angelton/1804 N. Velasco.",
+    "436/Convington /5341 Highway 20 South.","619/Griffin/1524 W. HWY 16.",
+    "293/Catersville /51 N Morningside Drive.","634/Dallas/8876 Dallas Acworth Hwy.",
+    "490/Fayetteville /805 S Glynn ST, Suite 117.","420/Nenan/3150 East Highway 34.",
+    "682/Gainesville/1931 Jesse Jewell Pkwy.","464/Mableton/4875 Floyd Rd.",
+    "419/Woodstock/12050 Highway 92, Site #112.","397/Acworth/3330 Cobb Parkway",
+    "458/Dalton/1365 W Walnut Av.","400/Macon/4321 Hartley Bridge Rd.",
+    "212/Tucker /3959 A la vista  Rd.","616/Douglasville /4815 Ridge Rd.",
+    "433/Mcdonough /5900 East Lake Parkway."
+     ];
             
             var Georgia = [
                  {display: "Georgia1", value: "1"},
@@ -120,6 +130,13 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
         
         });
     }
+    
+    
+    $( "#test" ).autocomplete({
+      source: Alabama,
+      minLength: 2
+
+    });
                  
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");

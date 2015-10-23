@@ -7,13 +7,14 @@
     <title>SDI KPF Reporting</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/dot-luv/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="javascript/events.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+    
 <body>
     
     <div id="wrapper">
@@ -85,27 +86,16 @@
                 <form id="new_kpf" role="form" data-toggle="validator">
 
                     <div class="form-group">
-                          <label>Event Date</label> <input  type="text" id="datePicker" required>  
+                          <label>Event Date</label> <input class="form-control"  type="text" id="datePicker" required>  
                     </div>
                     
-                    <div class="form-group">
-                        <label>Province</label>
-                        <select name="state_s" id="state_s" class="form-control">
-                            <option value="AL">AL</option>
-                            <option value="GA">GA</option>
-                            <option value="OH">OH</option>
-                            <option value="ON">ON</option>
-                            <option value="MS">MS</option>
-                            <option value="TN">TN</option>
-                            <option value="TX">TX</option>
-                        </select>
+            
+                    <div  class="form-group">
+                        <label for="test">Location: </label>
+                        <input class="form-control ui-autocomplete-loading" type="text" id="test" placeholder="Introduce the Store Location" required>
                     </div>
                     
-                     <div class="form-group">
-                        <label>Location</label>
-                        <select name="location_s" id="location_s" class="form-control">
-                        </select>
-                    </div>
+        
                     
                     <div class="form-group">
                         <label>In-Store Apps Submitted</label>
