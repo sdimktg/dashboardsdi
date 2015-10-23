@@ -32,105 +32,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 "917/TX/GRANBURY/3915 HWY 377 EAST"
      ];
             
-            var Georgia = [
-                 {display: "Georgia1", value: "1"},
-                 {display: "Georgia2", value: "2"},
-                 {display: "Georgia3", value: "3"},
-                 {display: "Georgia4", value: "4"},
-                 {display: "Georgia5", value: "5"},
-                 {display: "Georgia6", value: "6"},
-                 {display: "Georgia7", value: "7"},
-                 {display: "Georgia8", value: "8"},
-                 {display: "Georgia9", value: "9"},
-                 {display: "Georgia10", value: "10"},
-                 {display: "Georgia11", value: "11"},
-                 {display: "Georgia12", value: "12"},
-                 {display: "Georgia13", value: "13"},
-                {display: "Georgia14", value: "14"}];
-            
-            var Ohio = [
-                {display: "Ohio1", value: "1"},
-                {display: "Ohio2", value: "2"},
-                {display: "Ohio3", value: "3"},
-                {display: "Ohio4", value: "4"},
-                {display: "Ohio5", value: "5"}];
-            
-            var Ontario = [
-                {display: "Ontario1", value: "1"},
-                {display: "Ontario2", value: "2"}];
-            
-            
-             var Mississipi = [
-                {display: "Missi1", value: "1"},
-                {display: "Missi2", value: "2"},
-                {display: "Missi3", value: "3"},
-                {display: "Missi4", value: "4"}];
-            
-            
-            var Tennessee = [
-                {display: "Tenne1", value: "1"},
-                {display: "Tenne2", value: "2"},
-                {display: "Tenne3", value: "3"},
-                {display: "Tenne4", value: "4"},
-                {display: "Tenne5", value: "5"},
-                {display: "Tenne6", value: "6"},
-                {display: "Tenne7", value: "7"}];
-            
-            
-            var Texas = [
-                 {display: "Texas1", value: "1"},
-                 {display: "Texas2", value: "2"},
-                 {display: "Texas3", value: "3"},
-                 {display: "Texas4", value: "4"},
-                 {display: "Texas5", value: "5"},
-                 {display: "Texas6", value: "6"},
-                 {display: "Texas7", value: "7"},
-                 {display: "Texas8", value: "8"},
-                 {display: "Texas9", value: "9"},
-                 {display: "Texas10", value: "10"},
-                 {display: "Texas11", value: "11"},
-                 {display: "Texas12", value: "12"},
-                 {display: "Texas13", value: "13"}];
-            
-            
-        $("#state_s").change(function(){
-        
-            var state = $(this).val();
-            
-            switch(state){
-                
-                case 'AL':
-                    
-                    list(Alabama);
-                    break;
-                    
-                    case 'GA':
-                    
-                    list(Georgia);
-                    break;
-                    
-                    case 'OH':
-                    
-                    list(Ohio);
-                    break;
-                    
-                    case 'ON':
-                    
-                    list(Ontario);
-                    break;
-                    
-                    case 'TN':
-                    
-                    list(Tennessee);
-                    break;
-                    
-                    case 'TX':
-                    
-                    list(Texas);
-                    break;
-                    
-            }
-        });
+
             
             
     function list(array_list)
@@ -147,10 +49,23 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
     
     
     $( "#test" ).autocomplete({
-      source: Alabama,
+        source: function( request, response ) {
+            
+        $.ajax({
+          url: "/site_location",
+          dataType: "jsonp",
+          data: {
+            q: request.term
+          },
+          success: function( data ) {
+            response( data );
+          },
       minLength: 2
+        }
 
     });
+            
+        
                  
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");

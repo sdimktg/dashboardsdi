@@ -148,6 +148,37 @@ app.post('/listinglinks',function(req,res) {
  
 });
 
+
+/***********************************************************************************************
+GET-/LOCATION: Find the fields from the custom object and display it in the form (KPF.html)
+************************************************************************************************/
+app.get('/site_location',function(req,res) {
+    
+     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
+     
+     if (err) console.error(err);
+        
+        var select = 'SELECT full_location__c FROM salesforce.SDI_Site_Location__c ORDER BY Name ASC ';
+        conn.query(select, function(err, result) {
+          
+           if (err) {
+               
+                res.send('Error in Query');
+        
+           }
+            res.json(result);
+            
+            });
+        });
+});
+
+
+
+
+
+
+
+
 /***********************************************************************************************
 GET-/Listing: Find the fields from the custom object and display it in the form (index.html)
 ************************************************************************************************/
