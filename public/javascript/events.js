@@ -6,16 +6,30 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 ******************************************************************************************************/
      var Alabama = [
                 
-    "190/Humble/9475 FM 1960 BP","734/League City/250 S. FM 270",
-    "115/Cypress/9703 Barker Cypress Rd.","256/Angelton/1804 N. Velasco.",
-    "436/Convington /5341 Highway 20 South.","619/Griffin/1524 W. HWY 16.",
-    "293/Catersville /51 N Morningside Drive.","634/Dallas/8876 Dallas Acworth Hwy.",
-    "490/Fayetteville /805 S Glynn ST, Suite 117.","420/Nenan/3150 East Highway 34.",
-    "682/Gainesville/1931 Jesse Jewell Pkwy.","464/Mableton/4875 Floyd Rd.",
-    "419/Woodstock/12050 Highway 92, Site #112.","397/Acworth/3330 Cobb Parkway",
-    "458/Dalton/1365 W Walnut Av.","400/Macon/4321 Hartley Bridge Rd.",
-    "212/Tucker /3959 A la vista  Rd.","616/Douglasville /4815 Ridge Rd.",
-    "433/Mcdonough /5900 East Lake Parkway."
+    "722/OH/DAYTON/10101 LANDING WAY",
+"562/TN/KNOXVILLE/702 WINFIELD DUNN PARKWAY",
+"686 /TN/FARRAGUT /189 BROOKLAWN STREET", 
+"310/AL/LANETT/1401 S GILMER AVE",
+"190/TX/HUMBLE/9475 FM 1960 BP",
+"938/OH/ENGLEWOOD/885 UNION ROAD",
+"488 /TN/MEMPHIS/3444 PLAZA",
+"388/MS/BRANDON/1811 W GOVERNMENT ST",
+"990/ON/TORONTO/INSTORE/IN CLASS/TRAINING",
+"256/TX/ANGELTON/1804 N. VELASCO.",
+"366/TX/HOUSTON/12434 TOMBALL PKWY.",
+"490/GA/FAYETTEVILLE /805 S GLYNN ST, SUITE 117",
+"458/GA/DALTON/1365 W WALNUT AVENUE", 
+"419/GA/WOODSTOCK/12050 HIGHWAY 92, SITE # 112",
+"999/ON/TORONTO/200 - 65 INTERNATIONAL BLVD/SDI ADMIN",
+"260/AL/AUBURN/300 DEANS RD",
+"825/OH/KETTERING/2115 E. DOROTHY LANE",
+"420/GA/NEWNAN/3150 EAST HIGHWAY 34",
+"367/TX/HUMBLE/3820 ATASCOSITA RD.",
+"400/GA/MACON/4321 HARTLEY BRIDGE ROAD",
+"433/GA/MCDONOUGH /5900 EAST LAKE PARKWAY", 
+"999/ON/TORONTO/200 - 65 INTERNATIONAL BLVD/SDI ADMIN",
+"862/TN/KNOXVILLE/244 S. HALL RD.",
+"917/TX/GRANBURY/3915 HWY 377 EAST"
      ];
             
             var Georgia = [
