@@ -55,7 +55,12 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
             });
     
         },
-        minLength: 2
+        minLength: 2,
+        select: function( event, ui ) {
+        log( ui.item ?
+          "Selected: " + ui.item.label :
+          "Nothing selected, input was " + this.value);
+      },
    });     
        
                  
