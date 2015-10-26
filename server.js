@@ -158,7 +158,7 @@ app.get('/site_location',function(req,res) {
      
      if (err) console.error(err);
         
-        var select = 'SELECT full_location__c FROM salesforce.SDI_Site_Location__c ORDER BY Name ASC ';
+        var select = 'SELECT full_location__c FROM salesforce.SDI_Site_Location__c ORDER BY full_location__c ASC ';
         conn.query(select, function(err, result) {
           
            if (err) {
@@ -171,11 +171,6 @@ app.get('/site_location',function(req,res) {
             });
         });
 });
-
-
-
-
-
 
 
 

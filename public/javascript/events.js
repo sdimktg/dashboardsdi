@@ -1,9 +1,11 @@
 $(document).ready(function() {
+
     
 /******************************************************************************************************
 Dropdown List State and Location(Test Mode)will  be filling with json object from heroku database 
 
 ******************************************************************************************************/
+ 
      var Alabama = [
                 
     "722/OH/DAYTON/10101 LANDING WAY",
@@ -32,40 +34,25 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 "917/TX/GRANBURY/3915 HWY 377 EAST"
      ];
             
-
-            
-            
-    function list(array_list)
-    {
-        
-        $("#location_s").html("");
-        $(array_list).each(function(i) {
-            
-            $("#location_s").append("<option value=\""+array_list[i].value+"\">"+array_list[i].display+"</option>");
-        
-        
-        });
-    }
-    
     
     $( "#test" ).autocomplete({
         source: function( request, response ) {
             
         $.ajax({
           url: "/site_location",
-          dataType: "jsonp",
+          dataType: "json",
           data: {
             q: request.term
           },
           success: function( data ) {
             response( data );
-          },
+          }
+            });
       minLength: 2
-        }
+        },
 
     });
             
-        
                  
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
