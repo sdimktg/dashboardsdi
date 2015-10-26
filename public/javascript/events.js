@@ -34,7 +34,56 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 "917/TX/GRANBURY/3915 HWY 377 EAST"
      ];
     
+    
+    
+    
+       $("#test").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                dataType: "json",
+                data: {
+                    term: request.term,
+                },
+                type: 'Get',
+                contentType: 'application/json; charset=utf-8',
+                xhrFields: {
+                    withCredentials: true
+                },
+                crossDomain: true,
+                cache: true,
+                url: '/site_location',
+                success: function (data) {
+                    var array = $.map(data.value, function (item) {
+                        return {
+                            label: item.full_location__c,
+                            value: item.full_location__c
+                        }
+                    });
 
+                    //call the filter here
+                    response($.ui.autocomplete.filter(array, request.term));
+                },
+                error: function (data) {
+
+                }
+            });
+        },
+        //minLength: 3,
+        open: function () {
+
+        },
+        close: function () {
+
+        },
+        focus: function (event, ui) {
+
+        },
+        select: function (event, ui) {
+
+        }
+    });
+    
+/*
             $.ajax({
                 type: "POST",
                 url: '/site_location',
@@ -60,6 +109,8 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                 }
                 
             });
+            
+            */
 
     /*
     
