@@ -44,7 +44,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                   
             },
                         error: function(err) {
-                            errorMessage.text(err.responseJSON.error);
+                            errorMessage.text("This Store Code Does not exists");
                             error.show();
                         }
         });
