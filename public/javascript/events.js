@@ -96,7 +96,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                             $("#hour").val("");
                             $("#fuel_center").val("");
                             $("#notes").val("");
-                            $("#messageMessage").text("Kroger Personal Finance Report");
+                            $("#messageMessage").text("Kroger Personal Finance Report Created!");
                             $("#message").show();
                         },
                         error: function(err) {
