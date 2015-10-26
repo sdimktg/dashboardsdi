@@ -10,7 +10,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
        
         var request = this.value;
         
-        alert(request);
+        //alert(request);
         
                 $.ajax({ // ajax call starts
             url: '/site_location', 
@@ -31,7 +31,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
             }
         });
         
-         location.reload();
+         //location.reload();
         
          });
     
