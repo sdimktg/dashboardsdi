@@ -39,7 +39,9 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
         $.ajax({
           url: "/site_location",   
           dataType: "json",
-          data: {q: request.term},
+          data: {term: request.term,},
+          type: "Get",
+          contentType: 'application/json; charset=utf-8',
             
             //JSON.stringify({ "full_location__c": full_location__c }),  
             
