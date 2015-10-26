@@ -295,6 +295,15 @@ padding-top: 1em;
     text-align: center;
 }
 
+
+#warning {
+
+    
+    color: #072754;
+    font-weight: bold;
+    text-align: center;
+}
+
 #logout {
     
     
