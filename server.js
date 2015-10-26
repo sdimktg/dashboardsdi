@@ -158,8 +158,8 @@ app.get('/site_location',function(req,res) {
      
      if (err) console.error(err);
         
-        var select = 'SELECT store__c, full_location__c FROM salesforce.SDI_Site_Location__c ORDER BY full_location__c ASC ';
-        conn.query(select, function(err, result) {
+        var select = 'SELECT  full_location__c FROM salesforce.SDI_Site_Location__c WHERE store__c = $1 ';
+        conn.query(select,[req.body.store__c], function(err, result) {
           
            if (err) {
                

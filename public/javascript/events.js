@@ -34,56 +34,32 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 "917/TX/GRANBURY/3915 HWY 377 EAST"
      ];
     
-    
-     $("#test").autocomplete({
-        source: function (request, response) {
+
             $.ajax({
-                dataType: "jsonp",
-                data: {
-                    term: request.term,
-                },
-                type: 'Get',
-                contentType: 'application/json; charset=utf-8',
-                xhrFields: {
-                    withCredentials: true
-                },
-                crossDomain: true,
-                cache: true,
+                type: "POST",
                 url: '/site_location',
-                success: function (data) {
-                    var array = $.map(data.value, function (item) {
-                        return {
-                            label: item.full_location__c,
-                            value: item.store__c
-                        
-                        }
-                        alert(array);
-                    });
-
-                    //call the filter here
-                    response($.ui.autocomplete.filter(array, request.term));
+                dataType: "json",
+                data: {
+                   type: $("#test").val(),
+                    term: request.term
                 },
-                error: function (data) {
-
+                
+                success: function (data) {
+                    
+                    response($.map(data,function(c){
+                    
+                    return {
+                        
+                        label: c.full_location__c,
+                        value: c.full_location__c
+                    
+                    }
+                    
+                     }));
+                                
                 }
+                
             });
-        },
-        minLength: 3,
-        open: function () {
-
-        },
-        close: function () {
-
-        },
-        focus: function (event, ui) {
-
-        },
-        select: function (event, ui) {
-
-        }
-    });
-    
-    
 
     /*
     
