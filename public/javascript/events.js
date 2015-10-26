@@ -40,45 +40,27 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
             
         $.ajax({
           url: "/site_location",
-          data: JSON.stringify({ "full_location__c": full_location__c }),        
+               
           dataType: "json",
           type: "POST",
           contentType: "application/json; charset=utf-8",
+            data: {full_location__c: request.term},
+            
+            //JSON.stringify({ "full_location__c": full_location__c }),  
             
           success: function (result) {
               
               
-              response($.map($.parseJSON(result.d),function(item){
-                  
-                  return {ID:item.ID, Name:item.Name};
-              
-              }));
+              response(result);
                  
               }
 
             });
     
         },
-        
-        focus: function (event, ui) {
-            $("#test").val(ui.item.Name);
-            return false;
-        },
-        select: function (event, ui) {
-            $("#test").val(ui.item.Name);
-            //$("#staff-id").val(ui.item.ID);
-            return false;
-        }
-    }).data("autocomplete")._renderItem = function (ul, item) {
-        return $("<li>")
-            .data("item.autocomplete", item)
-            .append("<a>" + item.Name+ "</a>")
-            .appendTo(ul);
-    };
-        
-
-
-            
+        minLength: 3
+   });     
+       
                  
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
