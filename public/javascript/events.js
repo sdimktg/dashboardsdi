@@ -40,7 +40,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
             
         $.ajax({
           url: "/site_location",
-          dataType: "json",
+          dataType: "jsonp",
           data: {
             q: request.term
           },
