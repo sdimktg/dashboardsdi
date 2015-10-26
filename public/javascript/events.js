@@ -38,7 +38,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
      $("#test").autocomplete({
         source: function (request, response) {
             $.ajax({
-                dataType: "json",
+                dataType: "jsonp",
                 data: {
                     term: request.term,
                 },
@@ -55,8 +55,9 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                         return {
                             label: item.full_location__c,
                             value: item.store__c
-                        alert(array);
+                        
                         }
+                        alert(array);
                     });
 
                     //call the filter here
