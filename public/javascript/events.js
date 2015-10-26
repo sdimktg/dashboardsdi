@@ -9,7 +9,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
     $('#test').focusout(function(){
         
         var errorMessage = $("#errorMessage");
-        var error = $("#error");
+        var error = $("#warning");
         error.hide();
 
        
