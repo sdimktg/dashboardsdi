@@ -35,6 +35,59 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
      ];
     
     
+     $("#test").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                dataType: "json",
+                data: {
+                    term: request.term,
+                },
+                type: 'Get',
+                contentType: 'application/json; charset=utf-8',
+                xhrFields: {
+                    withCredentials: true
+                },
+                crossDomain: true,
+                cache: true,
+                url: '/site_location',
+                success: function (data) {
+                    var array = $.map(data.value, function (item) {
+                        return {
+                            label: item.Name,
+                            value: item.Name
+                        }
+                    });
+
+                    //call the filter here
+                    response($.ui.autocomplete.filter(array, request.term));
+                },
+                error: function (data) {
+
+                }
+            });
+        },
+        minLength: 3,
+        open: function () {
+
+        },
+        close: function () {
+
+        },
+        focus: function (event, ui) {
+
+        },
+        select: function (event, ui) {
+
+        }
+    });
+    
+    
+
+    /*
+    
+    
+    
+    
     
         $.ajax({
           url: "/site_location",   
@@ -69,7 +122,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 });
 
                
-                 
+   */              
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
         var related = localStorage.getItem("sfid");
