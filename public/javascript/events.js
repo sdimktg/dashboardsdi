@@ -53,34 +53,22 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                   
                     label : item.store,
                     value : item.full_location
-                  
-                  
                   }
-              
-              //alert(data);
-             // response(data);
                  
               });
               
               $( "#test" ).autocomplete({
                 source: array,
                 minLength: 2,
-        select: function( event, ui ) {
-        log( ui.item ?
-          "Selected: " + ui.item.label :
-          "Nothing selected, input was " + this.value);
-      },
-   });    
+                select: function( event, ui ) {
+  
+                }
+            });    
               
-              
+          },
+});
 
-            });
-    
-     });
-            
-    
-     
-       
+               
                  
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
