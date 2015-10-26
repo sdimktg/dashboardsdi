@@ -33,35 +33,53 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 "862/TN/KNOXVILLE/244 S. HALL RD.",
 "917/TX/GRANBURY/3915 HWY 377 EAST"
      ];
-            
     
-    $( "#test" ).autocomplete({
-        source: function( request, response ) {
-            
+    
+    
         $.ajax({
           url: "/site_location",   
           dataType: "json",
-          data: {q: request.term},
+          data: {q: request.term
+                
+          },
             
             //JSON.stringify({ "full_location__c": full_location__c }),  
             
           success: function (data) {
               
-              alert(data);
-              response(data);
+              var array = $.map(data.value, function(item){
+                  
+                  return {
+                  
+                    label = item.store,
+                    value = item.full_location
+                  
+                  
+                  }
+              
+              //alert(data);
+             // response(data);
                  
-              }
-
-            });
-    
-        },
-        minLength: 2,
+              });
+              
+              $( "#test" ).autocomplete({
+                source: array,
+                minLength: 2,
         select: function( event, ui ) {
         log( ui.item ?
           "Selected: " + ui.item.label :
           "Nothing selected, input was " + this.value);
       },
-   });     
+   });    
+              
+              
+
+            });
+    
+     });
+            
+    
+     
        
                  
         var employee_name = localStorage.getItem("employee_name__c");
