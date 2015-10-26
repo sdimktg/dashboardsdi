@@ -23,6 +23,9 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                 }),
            
             success: function(data) {
+                
+                var clear = $('#location');
+                clear.empty();
 
                 data.rows.forEach(function(row){
                 $('#location').append('<option id="store__c" value="'+row.store__c+'">' + row.full_location__c +'</option>');     
