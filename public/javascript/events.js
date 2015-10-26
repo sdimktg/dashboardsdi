@@ -6,7 +6,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 
 ******************************************************************************************************/
     
-    $('#test').keypress(function(){
+    $('#test').focus(function(){
         
         
         
