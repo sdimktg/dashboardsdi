@@ -189,7 +189,7 @@ app.post('/new_kpf', function(req, res) {
         if (err) console.log(err);
         
         
-                var insert = 'INSERT INTO salesforce.SDI_Rep_KPF__c (event_date__c, store_app__c , sdi_site_location__c , fuel_center_app__c, hour__c, notes__c) VALUES ($1, $2, $3, $4, $5,$6)';
+        var insert = 'INSERT INTO salesforce.SDI_Rep_KPF__c (Event_Date__c, store_app__c , sdi_site_location__c , fuel_center_app__c, hour__c, notes__c) VALUES ($1, $2, $3, $4, $5,$6)';
                     
             conn.query(insert,[req.body.datePicker, req.body.store_app, req.body.location, req.body.fuel_center,req.body.hour,req.body.notes],
     
