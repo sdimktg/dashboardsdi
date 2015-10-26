@@ -17,9 +17,10 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
             type:"POST",
             dataType: 'json', // Choosing a JSON datatype
             contentType: "application/json; charset=utf-8",
-            data: {
-                request: request,
-              },
+            data: JSON.stringify({
+                    request: request,
+                   
+                }),
            
             success: function(data) {
 
