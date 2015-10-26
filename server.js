@@ -158,7 +158,7 @@ app.post('/site_location',function(req,res) {
      
      if (err) console.error(err);
         
-        var select = 'SELECT store__c, full_location__c FROM salesforce.SDI_Site_Location__c WHERE store__c = $1 ';
+        var select = 'SELECT name, store__c, full_location__c FROM salesforce.SDI_Site_Location__c WHERE store__c = $1 ';
         conn.query(select,[req.body.request], 
                    
         function(err, result){

@@ -39,7 +39,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                 clear.empty();
 
                 data.rows.forEach(function(row){
-                $('#location').append('<option id="store__c" value="'+row.store__c+'">' + row.full_location__c +'</option>');     
+                $('#location').append('<option id="'+row.name+'" value="'+row.name+'">' + row.full_location__c +'</option>');     
           });
                   
             },
