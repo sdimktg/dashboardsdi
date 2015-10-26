@@ -5,35 +5,29 @@ $(document).ready(function() {
 Dropdown List State and Location(Test Mode)will  be filling with json object from heroku database 
 
 ******************************************************************************************************/
- 
-     var Alabama = [
-                
-    "722/OH/DAYTON/10101 LANDING WAY",
-"562/TN/KNOXVILLE/702 WINFIELD DUNN PARKWAY",
-"686 /TN/FARRAGUT /189 BROOKLAWN STREET", 
-"310/AL/LANETT/1401 S GILMER AVE",
-"190/TX/HUMBLE/9475 FM 1960 BP",
-"938/OH/ENGLEWOOD/885 UNION ROAD",
-"488 /TN/MEMPHIS/3444 PLAZA",
-"388/MS/BRANDON/1811 W GOVERNMENT ST",
-"990/ON/TORONTO/INSTORE/IN CLASS/TRAINING",
-"256/TX/ANGELTON/1804 N. VELASCO.",
-"366/TX/HOUSTON/12434 TOMBALL PKWY.",
-"490/GA/FAYETTEVILLE /805 S GLYNN ST, SUITE 117",
-"458/GA/DALTON/1365 W WALNUT AVENUE", 
-"419/GA/WOODSTOCK/12050 HIGHWAY 92, SITE # 112",
-"999/ON/TORONTO/200 - 65 INTERNATIONAL BLVD/SDI ADMIN",
-"260/AL/AUBURN/300 DEANS RD",
-"825/OH/KETTERING/2115 E. DOROTHY LANE",
-"420/GA/NEWNAN/3150 EAST HIGHWAY 34",
-"367/TX/HUMBLE/3820 ATASCOSITA RD.",
-"400/GA/MACON/4321 HARTLEY BRIDGE ROAD",
-"433/GA/MCDONOUGH /5900 EAST LAKE PARKWAY", 
-"999/ON/TORONTO/200 - 65 INTERNATIONAL BLVD/SDI ADMIN",
-"862/TN/KNOXVILLE/244 S. HALL RD.",
-"917/TX/GRANBURY/3915 HWY 377 EAST"
-     ];
     
+     var request = $('#test').val();
+    
+                $.ajax({ // ajax call starts
+            url: '/site_location', 
+            type:"POST",
+            dataType: 'json', // Choosing a JSON datatype
+            contentType: "application/json; charset=utf-8",
+            data: {
+            request: request,
+              },
+           
+            success: function(data) {
+
+                data.rows.forEach(function(row){
+                $('#location').append('<option id="store__c" value="'+row.store__c+'">' + row.full_location__c +'</option>');     
+          });
+                  
+            }
+        });
+    
+    
+ /*   
     
         $( "#test" ).autocomplete({
       source: function( request, response ) {
@@ -42,12 +36,15 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
           dataType: "jsonp",
           data: {
             q: request.term
+              
           },
           success: function( data ) {
             response( data );
           }
         });
       },
+            
+    
       minLength: 2,
     
      select: function( event, ui ) {
