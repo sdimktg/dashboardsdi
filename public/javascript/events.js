@@ -51,8 +51,8 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                   
                   return {
                   
-                    label = item.store,
-                    value = item.full_location
+                    label : item.store,
+                    value : item.full_location
                   
                   
                   }
