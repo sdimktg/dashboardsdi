@@ -39,9 +39,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
         $.ajax({
           url: "/site_location",   
           dataType: "json",
-          data: {q: request.term
-                
-          },
+          data: {q: request.term},
             
             //JSON.stringify({ "full_location__c": full_location__c }),  
             
@@ -65,7 +63,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                 }
             });    
               
-          },
+          }
 });
 
                
