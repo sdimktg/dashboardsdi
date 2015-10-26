@@ -62,7 +62,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 
                 $("#message").hide();
 
-                var date = $("#datePicker").val();
+                var datePicker = $("#datePicker").val();
                 var store_app = $("#store_app").val();
                 var location = $("#location").val();
                 var fuel_center = $("#fuel_center").val();
@@ -79,7 +79,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                         url: event.target.action,
                         method: event.target.method,
                         data: JSON.stringify({
-                            date: date,
+                           datePicker: datePicker,
                             store_app: store_app,
                             location: location,
                             fuel_center: fuel_center,
