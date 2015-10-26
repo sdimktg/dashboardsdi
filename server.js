@@ -158,7 +158,7 @@ app.post('/site_location',function(req,res) {
      
      if (err) console.error(err);
         
-        var select = 'SELECT name, store__c, full_location__c FROM salesforce.SDI_Site_Location__c WHERE store__c = $1 ';
+        var select = 'SELECT sfid, name, store__c, full_location__c FROM salesforce.SDI_Site_Location__c WHERE store__c = $1 ';
         conn.query(select,[req.body.request], 
                    
         function(err, result){
@@ -179,6 +179,41 @@ app.post('/site_location',function(req,res) {
 
 
 
+/*********************************************************************************************************
+POST-/create: Receive the form from the client side and create a new record in the database/salesforce
+**********************************************************************************************************/
+app.post('/new_kpf', function(req, res) {
+    
+    pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
+        
+        if (err) console.log(err);
+        
+        
+                var insert = 'INSERT INTO salesforce.SDI_Rep_KPF__c (event_date__c, store_app__c , sdi_site_location__c , fuel_center_app__c, hour__c, notes__c) VALUES ($1, $2, $3, $4, $5,$6)';
+                    
+            conn.query(insert,[req.body.datePicker, req.body.store_app, req.body.location, req.body.fuel_center,req.body.hour,req.body.notes],
+    
+                  function(err, result) {
+                        
+                    done();
+                        
+                    if (err) {
+                        
+                        res.status(400).json({error: err.message});
+                    }
+                    else {
+                        // this will still cause jquery to display 'Record updated!'
+                        // eventhough it was inserted
+                        res.json(result);
+                    }
+               
+               
+});         
+                    
+                               
+  });         
+            });         
+          
 /***********************************************************************************************
 GET-/Listing: Find the fields from the custom object and display it in the form (index.html)
 ************************************************************************************************/

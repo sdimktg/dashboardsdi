@@ -83,7 +83,7 @@
                     
                 <div class="col-lg-12">
 
-                <form id="new_kpf" role="form" data-toggle="validator">
+                <form id="new_kpf" role="form" action="/new_kpf" method="POST" data-toggle="validator">
 
                     <div class="form-group">
                           <label>Event Date</label> <input class="form-control"  type="text" id="datePicker" required>  
@@ -110,23 +110,23 @@
                     
                     <div class="form-group">
                         <label>In-Store Apps Submitted</label>
-                        <input class="form-control" placeholder="Apps Submitted" type="number" required>
+                        <input id="store_app" class="form-control" placeholder="Apps Submitted" type="number" required>
                     </div>
                     
                     <div class="form-group">
                         <label>Fuel Center Apps Submitted</label>
-                        <input class="form-control" placeholder="Fuel Center Submitted" type="number" required>
+                        <input id="fuel_center" class="form-control" placeholder="Fuel Center Submitted" type="number" required>
                     </div>
                     
                     <div class="form-group">
                         <label>Hours Worked</label>
-                        <input class="form-control" placeholder="Hours Worked" type="number" required>
+                        <input id="hour" class="form-control" placeholder="Hours Worked" type="number" required>
                     </div>
                     
                     
                      <div class="form-group">
                         <label>Notes</label>
-                        <textarea class="form-control" rows="1"></textarea>
+                        <textarea id="notes" class="form-control" rows="1"></textarea>
                     </div>
                     
                     

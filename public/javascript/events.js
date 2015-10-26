@@ -39,7 +39,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                 clear.empty();
 
                 data.rows.forEach(function(row){
-                $('#location').append('<option id="'+row.name+'" value="'+row.name+'">' + row.full_location__c +'</option>');     
+                $('#location').append('<option id="'+row.sfid+'" value="'+row.sfid+'">' + row.full_location__c +'</option>');     
           });
                   
             },
@@ -50,6 +50,64 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
         });
         
          });
+    
+    
+    
+        $("#new_kpf").submit(function(event) {
+                event.preventDefault();
+
+                var errorMessage = $("#errorMessage");
+                var error = $("#error");
+                error.hide();
+
+                $("#message").hide();
+
+                var date = $("#datePicker").val();
+                var store_app = $("#store_app").val();
+                var location = $("#location").val();
+                var fuel_center = $("#fuel_center").val();
+                var hour = $("#hour").val();
+                var notes = $("#notes").val();
+               
+
+                if (datePicker.length == 0 || store_app.length == 0 || location.length == 0 || fuel_center.length == 0 || hour.length == 0 ) {
+                    errorMessage.text("This fields are required.");
+                    error.show();
+                }
+                else {
+                    $.ajax({
+                        url: event.target.action,
+                        method: event.target.method,
+                        data: JSON.stringify({
+                            date: date,
+                            store_app: store_app,
+                            location: location,
+                            fuel_center: fuel_center,
+                            hour: hour,
+                            notes: notes
+                        }),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function(data) {
+                            $("#datePicker").val("");
+                            $("#store_app").val("");
+                            $("#location").val("");
+                            $("#fuel_center").val("");
+                            $("#hour").val("");
+                            $("#fuel_center").val("");
+                            $("#notes").val("");
+                            $("#messageMessage").text("IT Software License Created");
+                            $("#message").show();
+                        },
+                        error: function(err) {
+                            errorMessage.text(err.responseJSON.error);
+                            error.show();
+                        }
+                    })
+                }
+            });
+    
+    
              
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
