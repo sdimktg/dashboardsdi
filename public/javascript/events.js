@@ -7,7 +7,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 ******************************************************************************************************/
     
     $('#test').focusout(function(){
-        location.reload();
+       
         var request = this.value;
         
         alert(request);
@@ -30,6 +30,8 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                   
             }
         });
+        
+         location.reload();
         
          });
     
