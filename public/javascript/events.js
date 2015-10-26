@@ -7,10 +7,13 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 ******************************************************************************************************/
     
     $('#test').focusout(function(){
+        
+        var errorMessage = $("#errorMessage");
+        var error = $("#error");
+        error.hide();
+
        
         var request = this.value;
-        
-        //alert(request);
         
                 $.ajax({ // ajax call starts
             url: '/site_location', 
@@ -24,6 +27,14 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
            
             success: function(data) {
                 
+                if (request.length == 0 ) {
+                    errorMessage.text("This Store Code Does not exists");
+                    error.show();
+                }
+                
+                
+                
+                
                 var clear = $('#location');
                 clear.empty();
 
@@ -31,163 +42,15 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                 $('#location').append('<option id="store__c" value="'+row.store__c+'">' + row.full_location__c +'</option>');     
           });
                   
-            }
+            },
+                        error: function(err) {
+                            errorMessage.text(err.responseJSON.error);
+                            error.show();
+                        }
         });
-        
-         //location.reload();
         
          });
-    
- /*   
-    
-        $( "#test" ).autocomplete({
-      source: function( request, response ) {
-        $.ajax({
-          url: "/site_location",
-          dataType: "jsonp",
-          data: {
-            q: request.term
-              
-          },
-          success: function( data ) {
-            response( data );
-          }
-        });
-      },
-            
-    
-      minLength: 2,
-    
-     select: function( event, ui ) {
-        log( ui.item ?
-          "Selected: " + ui.item.label :
-          "Nothing selected, input was " + this.value);
-      },
-      open: function() {
-        $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-      }
-      close: function() {
-        $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-      }
-    });
-    
-    
-    /*
-       $("#test").autocomplete({
-        source: function (request, response) {
-            $.ajax({
-                dataType: "json",
-                data: {
-                    term: request.term,
-                },
-                type: 'Get',
-                contentType: 'application/json; charset=utf-8',
-                xhrFields: {
-                    withCredentials: true
-                },
-                crossDomain: true,
-                cache: true,
-                url: '/site_location',
-                success: function (data) {
-                    var array = $.map(data.value, function (item) {
-                        return {
-                            label: item.full_location__c,
-                            value: item.full_location__c
-                        }
-                    });
-
-                    //call the filter here
-                    response($.ui.autocomplete.filter(array, request.term));
-                },
-                error: function (data) {
-
-                }
-            });
-        },
-        //minLength: 3,
-        open: function () {
-
-        },
-        close: function () {
-
-        },
-        focus: function (event, ui) {
-
-        },
-        select: function (event, ui) {
-
-        }
-    });
-    
-/*
-            $.ajax({
-                type: "POST",
-                url: '/site_location',
-                dataType: "json",
-                data: {
-                   type: $("#test").val(),
-                    term: request.term
-                },
-                
-                success: function (data) {
-                    
-                    response($.map(data,function(c){
-                    
-                    return {
-                        
-                        label: c.full_location__c,
-                        value: c.full_location__c
-                    
-                    }
-                    
-                     }));
-                                
-                }
-                
-            });
-            
-            */
-
-    /*
-    
-    
-    
-    
-    
-        $.ajax({
-          url: "/site_location",   
-          dataType: "json",
-          data: {term: request.term,},
-          type: "Get",
-          contentType: 'application/json; charset=utf-8',
-            
-            //JSON.stringify({ "full_location__c": full_location__c }),  
-            
-          success: function (data) {
-              
-              var array = $.map(data.value, function(item){
-                  
-                  return {
-                  
-                    label : item.store,
-                    value : item.full_location
-                  }
-                 
-              });
-              
-              $( "#test" ).autocomplete({
-                source: array,
-                minLength: 2,
-                select: function( event, ui ) {
-  
-                }
-            });    
-              
-          }
-});
-
-               
-   */              
+             
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
         var related = localStorage.getItem("sfid");

@@ -92,7 +92,14 @@
             
                     <div  class="form-group">
                         <label for="test">Store Code: </label>
-                        <input class="form-control ui-autocomplete-loading" type="text" id="test" placeholder="Introduce the Store Location" required>
+                        <input class="form-control " type="text" maxlength="3" size="3" id="test" placeholder="Introduce the Store Location - XXX" required>
+                    </div>
+                    
+                    
+                    <div id="error" class="alert alert-danger" role="alert" style="display: none;">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        <span id="errorMessage"></span>
                     </div>
                     
                     <div class="form-group">
@@ -123,6 +130,9 @@
                         <label>Notes</label>
                         <textarea class="form-control" rows="1"></textarea>
                     </div>
+                    
+                    
+                    
                     
                         <button id="style_btn" type="submit" class="btn btn-default ">Submit </button>
                         <button type="reset" class="btn btn-default">Reset </button>
