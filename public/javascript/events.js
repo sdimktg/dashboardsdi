@@ -32,7 +32,6 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
         
          });
     
-    
  /*   
     
         $( "#test" ).autocomplete({

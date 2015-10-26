@@ -152,7 +152,7 @@ app.post('/listinglinks',function(req,res) {
 /***********************************************************************************************
 GET-/LOCATION: Find the fields from the custom object and display it in the form (KPF.html)
 ************************************************************************************************/
-app.get('/site_location',function(req,res) {
+app.post('/site_location',function(req,res) {
     
      pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
      
