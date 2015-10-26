@@ -6,8 +6,14 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
 
 ******************************************************************************************************/
     
-     var request = $('#test').val();
-    
+    $('#test').keypress(function(){
+        
+        
+        
+        var request = this.value;
+        
+        alert(request);
+        
                 $.ajax({ // ajax call starts
             url: '/site_location', 
             type:"POST",
@@ -25,6 +31,8 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                   
             }
         });
+        
+         });
     
     
  /*   
@@ -54,7 +62,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
       },
       open: function() {
         $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-      },
+      }
       close: function() {
         $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
       }
