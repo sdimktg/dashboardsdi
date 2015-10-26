@@ -158,17 +158,22 @@ app.get('/site_location',function(req,res) {
      
      if (err) console.error(err);
         
-        var select = 'SELECT  full_location__c FROM salesforce.SDI_Site_Location__c WHERE store__c = $1 ';
-        conn.query(select,[req.body.q], function(err, result) {
-          
-           if (err) {
-               
-                res.send({error:err});
-        
-           }
-            res.json(result);
+        var select = 'SELECT store__c, full_location__c FROM salesforce.SDI_Site_Location__c WHERE store__c = $1 ';
+        conn.query(select,[req.body.request], 
+                   
+        function(err, result){
+            done();
             
-            });
+                if (err != null || result.rowCount == 0) {
+                    
+                    res.status(400).json({error: err});
+                }
+                else {
+                    
+                    res.json(result);
+                }
+                   
+        });           
         });
 });
 

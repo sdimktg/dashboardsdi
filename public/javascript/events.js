@@ -8,8 +8,6 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
     
     $('#test').focusout(function(){
         
-        
-        
         var request = this.value;
         
         alert(request);
@@ -20,7 +18,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
             dataType: 'json', // Choosing a JSON datatype
             contentType: "application/json; charset=utf-8",
             data: {
-            request: request,
+                request: request,
               },
            
             success: function(data) {
