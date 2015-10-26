@@ -35,8 +35,36 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
      ];
     
     
+        $( "#test" ).autocomplete({
+      source: function( request, response ) {
+        $.ajax({
+          url: "/site_location",
+          dataType: "jsonp",
+          data: {
+            q: request.term
+          },
+          success: function( data ) {
+            response( data );
+          }
+        });
+      },
+      minLength: 2,
+    
+     select: function( event, ui ) {
+        log( ui.item ?
+          "Selected: " + ui.item.label :
+          "Nothing selected, input was " + this.value);
+      },
+      open: function() {
+        $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+      },
+      close: function() {
+        $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+      }
+    });
     
     
+    /*
        $("#test").autocomplete({
         source: function (request, response) {
             $.ajax({
