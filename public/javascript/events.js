@@ -42,8 +42,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
           url: "/site_location",   
           dataType: "jsonp",
           type: "POST",
-          contentType: "application/json; charset=utf-8",
-            data: {q: request.term},
+          data: {q: request.term},
             
             //JSON.stringify({ "full_location__c": full_location__c }),  
             
@@ -57,7 +56,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
             });
     
         },
-        minLength: 3
+        minLength: 2
    });     
        
                  
