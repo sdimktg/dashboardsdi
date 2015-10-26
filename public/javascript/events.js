@@ -53,8 +53,8 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                 success: function (data) {
                     var array = $.map(data.value, function (item) {
                         return {
-                            label: item.Name,
-                            value: item.Name
+                            label: item.full_location__c,
+                            value: item.store__c
                         }
                     });
 
