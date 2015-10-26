@@ -98,6 +98,8 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                             $("#notes").val("");
                             $("#messageMessage").text("Kroger Personal Finance Report Created!");
                             $("#message").show();
+                            location.reload();
+                           
                         },
                         error: function(err) {
                             errorMessage.text(err.responseJSON.error);
