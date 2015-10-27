@@ -32,15 +32,12 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                     error.show();
                 }
                 
-                
-                
-                
                 var clear = $('#location');
                 clear.empty();
 
                 data.rows.forEach(function(row){
                 $('#location').append('<option id="'+row.sfid+'" value="'+row.sfid+'">' + row.full_location__c +'</option>');     
-          });
+                });
                   
             },
                         error: function(err) {
@@ -109,9 +106,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                     })
                 }
             });
-    
-    
-             
+      
         var employee_name = localStorage.getItem("employee_name__c");
         var nameID = localStorage.getItem("name");
         var related = localStorage.getItem("sfid");
