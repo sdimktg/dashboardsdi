@@ -68,6 +68,7 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                 var fuel_center = $("#fuel_center").val();
                 var hour = $("#hour").val();
                 var notes = $("#notes").val();
+                var sfid = localStorage.getItem("sfid");
                
 
                 if (datePicker.length == 0 || store_app.length == 0 || location.length == 0 || fuel_center.length == 0 || hour.length == 0 ) {
@@ -84,7 +85,8 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                             location: location,
                             fuel_center: fuel_center,
                             hour: hour,
-                            notes: notes
+                            notes: notes,
+                            sfid: sfid
                         }),
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
