@@ -105,6 +105,11 @@ Dropdown List State and Location(Test Mode)will  be filling with json object fro
                         }
                     })
                 }
+            
+            
+                var clear1 = $('#new_kpf');
+                clear1.empty();
+         
             });
       
         var employee_name = localStorage.getItem("employee_name__c");
