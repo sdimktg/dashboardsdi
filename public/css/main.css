@@ -193,6 +193,14 @@ position:relative;
 
 }
 
+
+.color_link:hover {
+
+color:white;
+
+
+}
+
 .panel-green {
     border-color: #072754;
 }
